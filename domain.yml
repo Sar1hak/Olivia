@@ -1,0 +1,316 @@
+version: "2.0"
+
+intents:
+- jokes
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- faq
+- personal_data:
+    use_entities: []
+- chitchat:
+    use_entities: []
+- health_data:
+    use_entities: []
+- bot_challenge
+- remedy
+- enquire
+- gender
+- images
+- how_are_you
+- know
+- Doctor
+- problem
+- out_of_scope
+- response1
+- response2
+- thank
+
+
+entities:
+- user_name
+- age
+- personal_history
+- user_contact
+- exercise
+- user_water_intake
+- user_sleep
+- number
+- gender
+- disease_name
+- stress
+- blood_type
+- user_mail
+- user_problem
+- confirm_data_intake
+- confirm_health_intake
+
+slots:
+  person_name:
+    type: any
+  user_name:
+    type: text
+  age:
+    type: any
+  gender:
+    type: categorical
+    values:
+    - "Male"
+    - "Female"
+    - "Others"
+  history:
+    type: text
+  phone_num:
+    type: any
+  blood_type:
+    type: any
+  email:
+    type: any
+  exercise:
+    type: categorical
+    values:
+    - "Yes"
+    - "Sometimes"
+    - "No"
+  water:
+    type: any
+  sleep:
+    type: any
+  stress:
+    type: categorical
+    values:
+    - "low"
+    - "medium"
+    - "high"
+  problems:
+    type: any
+  language:
+    type: categorical
+    values:
+    - english
+  confirm_data_intake:
+    type: categorical
+    values:
+    - "True"
+    - "False"
+  confirm_health_intake:
+    type: categorical
+    values:
+    - "True"
+    - "False"
+
+responses:
+  utter_welcome:
+  - text: Hi! This is Chi here, How ca I help you?
+  utter_ask_rephrase:
+  - text: Sorry, I'm not sure I understand. Could you rephrase it?
+  - text: Could you please rephrase your message? I didn't quite get that.
+  utter_did_that_help:
+  - text: Did that help you?
+  - text: Was that helpful?
+  utter_goodbye:
+  - text: Bye-Bye
+  - text: Byeeeeeee
+  - text: Goodbye
+  utter_greet:
+  - text: Hey! How you doing?
+  - text: Hello! How are you today?
+  utter_happy:
+  - text: Great, carry on!
+  - text: That is really good to hear
+  utter_iamabot:
+  - text: I am a bot, created by Sarthak.
+  - text: Truth be told, I am Bot.
+  utter_joke:
+  - text: Earn it boi
+  - text: Are you sure you can handle my jokes? You might laugh your Ash off.
+  utter_ask_symptom:
+  - text: What symptom is bothering you the most?
+  - text: Can you describe your symptoms for me?
+  utter_symptoms_unknown:
+  - text: I'll given you some options to help you out :)
+  utter_time:
+  - text: How long have you been experiencing the [disease_name]
+  utter_take_info:
+  - text: Would you like to share some personal information with us before beginning?
+    buttons:
+    - title: "Yes"
+      payload: '/response1{{"confirm_data_intake": "True"}}'
+    - title: "No"
+      payload: '/response1{{"confirm_data_intake": "False"}}'
+  utter_take_health_info:
+  - text: Would you like to share some health related information with us?
+    buttons:
+    - title: "Yes"
+      payload: '/response2{{"confirm_health_intake": "True"}}'
+    - title: "No"
+      payload: '/response2{{"confirm_health_intake": "False"}}'
+  utter_take_test:
+  - text: Would you like to take a test to Confirm disease?
+    buttons:
+    - title: "Yes"
+      payload: '/action_take_test'
+    - title: "No"
+      payload: '/help'
+  utter_ask_person_name:
+  - text: "Enter your name:"
+  - text: What is your name?
+  utter_ask_age:
+  - text: How old are you?
+  - text: What is your age?
+  utter_ask_gender:
+  - text: Are you male or female? If you don't wish to answer you can leave it bank.
+    buttons:
+    - title: "male"
+      payload: '/personal_data{{"gender": "Male"}}'
+    - title: "female"
+      payload: '/personal_data{{"gender": "Female"}}'
+    - title: "I don't wish to Answer"
+      payload: '/personal_data{{"gender": "Others"}}'
+  utter_ask_phone_num:
+  - text: Please provide your contact number
+  utter_ask_email:
+  - text: "Please provide your email id"
+  utter_ask_blood_type:
+  - text: "What is you Blood type"
+  utter_ask_history:
+  - text: "Any medical history I should know about"
+  utter_ask_exercise:
+    - text: Do you exercise?
+      buttons:
+      - title: "REGULARLY"
+        payload: '/health_data{{"exercise":"Regularly"}}'
+      - title: "SOMETIMES"
+        payload: '/health_data{{"exercise":"Sometimes"}}'
+      - title: "NO"
+        payload: '/health_data{{"exercise":"No"}}'
+  utter_ask_sleep:
+  - text: "How much sleep did you get last night?"
+  utter_ask_water:
+  - text: "Water intake per Day(in liters)"
+  utter_ask_stress:
+  - text: "What is your stress level right now ?"
+    buttons:
+    - title: "LOW"
+      payload: '/health_data{{"stress": "low"}}'
+    - title: "MEDIUM"
+      payload: '/health_data{{"stress": "medium"}}'
+    - title: "HIGH"
+      payload: '/health_data{{"stress": "high"}}'
+  utter_personal_data_summary:
+  - text: "You've submitted the following answers:\n
+            - Name: {user_name}\n
+            - Age: {age}\n
+            - Contact No.: {user_contact}\n
+            - Exercised?: {exercise}\n
+            - Sleep: {user_sleep}\n
+            - Water in take: {user_water_intake}\n
+            - Stress level: {stress}"
+  utter_ask_problems:
+  - text: "Can you explain your problem"
+  utter_confirm_request:
+  - text: "Thank you for sharing you information"
+  utter_ask_continue:
+  - text: "Wanna continue with the data entry for evaluation"
+  utter_info_thanks:
+  - text: "Thank you so much for the information"
+  utter_anything_else:
+  - text: "Do you want anything else"
+  utter_no_worries:
+  - text: "No problemo!"
+  utter_out_of_scope:
+  - text: "This text is really out of context"
+  utter_nohelp:
+  - text: For now that's all I can do, so feel free to try it out. If you have any
+      suggestions for what I should learn, let me know!
+
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+
+
+actions:
+- action_submit_personal_data
+- action_submit_health_data
+- action_enquire
+- action_disease_evaluation
+
+
+
+
+forms:
+  personal_data_form:
+    person_name:
+      - type: from_entity
+        entity: user_name
+      - type: from_text
+        intent: personal_data
+    age:
+      - type: from_entity
+        entity: age
+      - type: from_text
+        intent: personal_data
+    gender:
+      - type: from_entity
+        entity: gender
+      - type: from_text
+        intent: personal_data
+    phone_num:
+      - type: from_entity
+        entity: user_contact
+      - type: from_text
+        intent: personal_data
+    blood_type:
+      - type: from_entity
+        entity: blood_type
+      - type: from_text
+        intent: personal_data
+    email:
+      - type: from_entity
+        entity: user_mail
+      - type: from_text
+        intent: personal_data
+    history:
+      - type: from_entity
+        entity: personal_history
+      - type: from_text
+        intent: personal_data
+  suggestion_form:
+    suggestion:
+      - type: from_text
+  health_form:
+    exercise:
+      - type: from_entity
+        entity: exercise
+      - type: from_text
+        intent: health_data
+    water:
+      - type: from_entity
+        entity: user_water_intake
+      - type: from_text
+        intent: health_data
+    stress:
+      - type: from_entity
+        entity: stress
+      - type: from_text
+        intent: health_data
+    sleep:
+      - type: from_entity
+        entity: user_sleep
+      - type: from_text
+        intent: health_data
+    problems:
+      - type: from_entity
+        entity: user_problem
+      - type: from_text
+        intent: health_data

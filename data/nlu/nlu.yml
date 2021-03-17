@@ -1,0 +1,750 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - yo
+    - hey bot
+    - hey bot!
+    - hey dude
+    - hey hey
+    - hey let's talk
+    - hey Chi
+    - hey chi
+    - hey ther
+    - hey there
+    - hey there boy
+    - hey there..
+    - hey, let's talk
+    - hey, chi!
+    - heya
+    - heyho
+    - heyo
+    - hhola
+    - hi !
+    - hi Mister
+    - hi again
+    - hi can you speak ?
+    - hi folks
+    - hi friend
+    - hi friends
+    - hi hi
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - see ya
+    - laters
+    - laters baby
+    - good night
+    - cee you later
+    - Bye bye
+    - adios
+    - adios?.
+    - bye :P
+    - bye bot
+    - byeeeeee bye
+    - bye bye bot
+    - bye for now
+    - bye udo
+    - bye was nice talking to you
+    - bye!
+    - byee
+    - catch you later
+    - ciao
+    - cya
+    - farewell
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Accept
+    - Awesome!
+    - Good
+    - Great
+    - I accept
+    - I accept.
+    - I agree
+    - I am using it
+    - I changed my mind. I want to accept it
+    - I do
+    - I get it
+    - I guess so
+    - I have used it in the past
+    - I will
+    - I'd absolutely love that
+    - I'm sure I will!
+    - I'm using it
+    - Nice
+    - OK
+    - Ofcourse
+    - Oh yes
+    - Oh, ok
+    - Ok
+    - Ok let's start
+    - Ok.
+    - Okay
+    - Okay!
+    - PLEASE
+    - SURE
+    - Sure
+    - Sweet
+    - That would be great
+    - YUP
+    - Yea
+    - Yeah
+    - Yeah sure
+    - Yep
+    - Yep that's fine
+    - Yep!
+    - Yepp
+    - Yes I do
+    - Yes please
+    - Yes please!
+    - Yes, I accept
+    - Yes.
+    - a little
+    - absolutely
+    - accept
+    - accepted
+    - agreed
+    - ah ok
+    - alright
+    - alright, cool
+    - amayzing
+    - amazing!
+    - awesome
+    - awesome!
+    - confirm
+    - cool story bro
+    - definitely yes without a doubt
+    - done
+    - fair enough
+    - fcourse
+    - fine
+    - fuck yeah!
+    - go
+    - go ahead
+    - go for it
+    - going super well
+    - good.
+    - great
+    - great lets do that
+    - great!
+    - hell yeah
+    - hell yes
+    - hm, i'd like that
+    - how nice!
+    - i accept
+    - i agree
+    - i am!
+    - i want that
+    - i will!
+    - it is ok
+    - its okay
+    - ja
+    - ja cool
+    - ja thats great
+    - jezz
+    - jo
+    - k
+    - kk
+    - lets do it
+    - lets do this
+    - not bad
+    - of course
+    - ofcoure i do
+    - ofcourse
+    - oh awesome!
+    - oh cool
+    - oh good !!
+    - oh super
+    - ok cool
+    - ok fine
+    - ok friend
+    - ok good
+    - ok great
+    - ok i accept
+    - ok chi
+    - ok, I behave now
+    - ok, I understood
+    - ok, Chi
+    - ok...
+    - okay
+    - okay cool
+    - okay sure
+    - okay..
+    - oki doki
+    - okie
+    - ook
+    - oui
+    - perfect
+    - please
+    - si
+    - sort of
+    - sure
+    - sure thing
+    - sure!
+    - that is cool
+    - that ok
+    - that sounds fine
+    - that's great
+    - thats fine
+    - thats good
+    - thats great
+    - top
+    - uh-huh
+    - very much
+    - well yes
+    - y
+    - ya
+    - ya cool
+    - ya go for it
+    - ya i want
+    - ya please
+    - ya thats cool
+    - yaah
+    - yap
+    - yaps
+    - yas
+    - yay
+    - ye
+    - ye splease
+    - yea
+    - yeah
+    - yeah do that
+    - yeah sure
+    - yeah'=
+    - yeah, why not
+    - yeeeeezzzzz
+    - yeeees
+    - yep
+    - yep i want that
+    - yep if i have to
+    - yep please
+    - yep that's nice
+    - yep thats cool
+    - yep, will do thank you
+    - yep. :/
+    - yes ...
+    - yes I do
+    - yes accept please
+    - yes baby
+    - yes cool
+    - yes give me information
+    - yes go ahead
+    - yes go for it
+    - yes great
+    - yes i accept
+    - yes i agree
+    - yes i have built a bot before
+    - yes i have!
+    - yes it is
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - I'm not going to give it to you
+    - NEIN
+    - NO
+    - NO DON"T WANT THIS!
+    - Nah
+    - Neither
+    - Never
+    - Nevermind
+    - No thank you
+    - No, not really.
+    - No, thank you
+    - No.
+    - Nopes
+    - Not really
+    - absolutely not
+    - decline
+    - definitely not
+    - deny
+    - i decline
+    - i don not like this
+    - i don't think so
+    - i don't want either of those
+    - i don't want to
+    - i don't want to give you my email
+    - i dont want to
+    - i dont want to accept :P lol
+    - i guess it means - no
+    - i'm afraid not
+    - i'm not sure
+    - it is going pretty badly
+    - it sucks
+    - it sux
+    - nah
+    - nah I'm good
+    - nah not for me
+    - nah, first time
+    - nah, i'm good
+    - nehi
+    - nein
+    - neither
+    - never
+    - never mind
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - Great
+    - Fit as always
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - dont have any problem
+    - i am perfectly fine
+    - im perfect
+    - i am well
+    - i am fit
+    - im fit as mike tyson
+    - they call me beast
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - Am I talking to a human?
+    - You a bot?
+
+
+- intent: how_are_you
+  examples:  |
+    - how are you
+    - how is it going
+    - How is life
+    - how do you do
+    - How r u
+
+
+
+- intent: gender
+  examples:  |
+    - male
+    - female
+    - Im a male
+    - I'm a female
+
+- intent: know
+  examples: |
+    - I have [rasa](disease_name)
+    - [rasa](disease_name)
+    - Do I have [rasa](disease_name)
+    - help me with [rasa](disease_name) 
+
+- intent: Doctor
+  examples: |
+    -  I would like to talk to a doctor
+    -  Connect me to a Pediatrition
+
+
+- intent: faq
+  examples:  |
+    - what is comapany?
+    - can you tell me what company is?
+    - what does company do
+
+
+- intent: enquire
+  examples: |
+    - What is [Asthma](disease_name)
+    - What is [Circadian rhythm sleep disorder](disease_name) ?
+    - What is [corona](disease_name)????
+    - What is [Asthma](disease_name) ?
+    - what is [Psoriasis](disease_name)
+    - What is [Zollinger-Ellison syndrome](disease_name)
+    - What is [adjustment disorders](disease_name)
+    - what is [ptsd](disease_name)
+    - does [Black Death](disease_name) exist
+    - does [asthma](disease_name) exist
+    - does [ptsd](disease_name) exist
+    - does [Black Death](disease_name) exist
+    - ever heard of [Circadian rhythm sleep disorder](disease_name)
+    - are [pikachu](disease_name) and [charmander](disease_name) pokemon?
+    - is [rasa](disease_name) harmful?
+    - i want to enquire about [parotid tumors](disease_name)
+    - can you tell me about [parotid tumors](disease_name)?
+    - Explain [ptsd](disease_name)
+    - explain [black Death](disease_name)
+    - tell me about [cancer](disease_name)
+
+- intent: remedy
+  examples: |
+   - I have [Asthma](disease_name) is there a cure
+   - I have [Asthma](disease_name) in a remedy
+   - Recommend cure for [Asthma](disease_name)
+   - Help me with [Asthma](disease_name)
+   - I need a cure for [Asthma](disease_name)
+
+- intent: images
+  examples: |
+    - How does [Cancer](disease_name) looks like?
+    - Image for [Cancer](disease_name)
+    - images for [Asthma](disease_name)
+    - Show me how [Cancer](disease_name) looks
+    - show me everything
+
+
+- intent: personal_data
+  examples: |
+    - [Sarthak](user_name)
+    - [Jimmy](user_name)
+    - [David](user_name)
+    - [Harry Potter](user_name)
+    - [Jeremy Paul](user_name)
+    - [Helen Keller](user_name)
+    - My name is [sarthak Chauhan](user_name)
+    - My name is [Sherlock Holmes](user_name)
+    - My name is [Charles Dickens](user_name)
+    - My name is [Joey Tribbany](user_name)
+    - Im [sherlock homes](user_name)
+    - [david smith](user_name)
+    - My age is [99](age) years
+    - [10](age)
+    - im [69](age) years old
+    - my name is [Earl Ring](user_name)
+    - my name is [Felicia Cosby](user_name)
+    - my name is [Frances Kunkle](user_name)
+    - my name is [Greg King](user_name)
+    - my name is [james culpit](user_name)
+    - my name is [Jermaine Mccleery](user_name)
+    - my name is [John Evers](user_name)
+    - my name is [Joseph Parson](user_name)
+    - my name is [Monica Ser](user_name)
+    - in past i suffered from [Cancer](personal_history)
+    - [None](personal_history)
+    - [none](personal_history)
+    - [valvular Heart disease](personal_history)
+    - [Digeorge syndrome](personal_history)
+    - [zollinger](personal_history)
+    - [No past history](personal_history)
+    - i had [corona](personal_history) few months ago
+    - i had [pad](personal_history) few months ago
+    - i had [AIDS](personal_history) few months ago
+    - i had [valvular Heart disease](personal_history) few months ago
+    - i had [AIDS](personal_history) few months ago
+    - i had [valvular Heart disease](personal_history) few months ago
+    - i had [heart transplant](personal_history)
+    - i had [fracture](personal_history)
+    - [9690917043](user_contact)
+    - [1234567890](user_contact)
+    - [9999999999](user_contact)
+    - [6969696968](user_contact)
+    - [6666345252](user_contact)
+    - my mobile number is [09090909090](user_contact)
+    - contact number [696969696969](user_contact)
+    - connect with me on [+91706433422](user_contact)
+    - [A positive](blood_type)
+    - my blood type is [O negative](blood_type)
+    - [AB negative](blood_type)
+    - [B positive](blood_type)
+    - [hero@gmail.com](user_mail)
+    - [rambo@hotmail.com](user_mail)
+    - [rambo@hotmail.com](user_mail)
+    - [mgk@rocketmail.in](user_mail)
+    - mgk@rocketmail.in
+    - my official email id is [sarthak@pp.gdf.in](user_mail)
+    - [Male](gender)
+    - [Female](gender)
+    - [Transgender](gender)
+    - [Bisexual](gender)
+    - [Lesbian](gender)
+    - i am  a [Female](gender)
+    - [Others](gender)
+    - [25](age) years old
+    - [69](age) years old
+    - [18](age) years old
+    - [4](age) years old
+    - [99](age)
+    - [22](age)
+    - [5](age)
+    - [19](age)
+    - [69](age)
+    - [70](age)
+    - [86](age)
+    - my age is around [1](age) 
+
+- intent: out_of_scope
+  examples: |
+    - that's not what I want to do
+    - wait stop
+    - you're no help
+    - this is no help at all
+    - how old are you
+    - I want to order a pizza
+    - tell me the weather
+    - this isn't working
+    - I already told you that
+    - don't like that
+    - I don't want to tell you that
+    - none of your business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I want to do something else
+    - I changed my mind
+
+- intent: jokes
+  examples: |
+    - i need money
+    - where is the money
+    - get me some money
+    - give me money
+
+
+- intent: problem
+  examples: |
+    - I have a problem
+    - Problem with me
+    - I think i have [Asthma](disease_name)
+    - I have [Asthma](disease_name)
+    - I have [adenomyosis](disease_name)
+    - I have [adjustment disorders](disease_name)
+    - i have [Mesenteric ischemia](disease_name)
+    - I have [valvular Heart disease](disease_name)
+    - i have [Psoriasis](disease_name)
+    - i have [asthma](disease_name)
+    - Help me with [Asthma](disease_name)
+    - Do i have [cancer](disease_name)
+    - Do i have [pseudomembranous colitis](disease_name)
+    - Do i have [adjustment disorders](disease_name)
+    - test for [corona](disease_name)
+    - I would like to take a test for [insomnia](disease_name)
+    - [kidney](disease_name)
+    - [Asthma](disease_name)
+    - [adjustment disorders](disease_name)
+    - [Pseudomembranous Colitis](disease_name)
+    - I fucked up
+    - i think i have a disease
+    - can you predict my disease
+    - Predict my disease
+    - I have disturbing symptoms
+    - I am bleeding
+    - Blood Blood
+    - I need help
+    - guess my disease
+    - I guess i have [adjustment disorders](disease_name)
+    - I guess i have [corona](disease_name)
+    - im sick
+    - I'm sick
+    - i am tired
+    - I dont know
+    - idk
+    - i dont know but i am worried
+    - idk im sick
+    - idk im just a little worried
+
+
+- intent: thank
+  examples: |
+    - Cool. Thanks
+    - Great, thanks
+    - Thank you
+    - Thank you Chi
+    - Thank you so much
+    - Thank's!
+    - Thanks
+    - Thanks bot
+    - Thanks for that
+    - Thanks!
+    - amazing, thanks
+    - cheers
+    - cheers bro
+    - cool thank you
+    - cool thanks
+    - cool, thanks
+    - danke
+    - great thanks
+    - ok thanks
+    - ok thanks chi
+    - ok thanks!
+    - perfect thank you
+    - thank u
+    - thank you
+    - thank you anyways
+    - thanks
+    - thanks a bunch for everything
+    - thanks a lot
+    - thanks for forum link, I'll check it out
+    - thanks for the help
+    - thanks this is great news
+    - thanks you
+    - thanks!
+    - thankyou
+    - thnks
+    - thx
+    - yes thanks
+    - thanks for your information
+    - thanks f
+
+
+- intent: health_data
+  examples: |
+    - in past i suffered from [Cancer](user_problem)
+    - in past i suffered from [Parotid tumors](user_problem)
+    - in past i suffered from [compulsive gambling](user_problem)
+    - in past i suffered from [pda](user_problem)
+    - i had [corona](user_problem) few months ago
+    - i had [PDA](user_problem) few months ago
+    - i had [kidney cancer](user_problem) few months ago
+    - i had [Renal Cancer](user_problem) few months ago
+    - a full [8 hours](user_sleep)
+    - a full [24 hours](user_sleep)
+    - a full [1 hours](user_sleep)
+    - only [four hours](user_sleep)
+    - only [ten hours](user_sleep)
+    - only [seventeen hours](user_sleep)
+    - only [11 hours](user_sleep)
+    - only [19 hours](user_sleep)
+    - about [six hours](user_sleep)
+    - [11 hours](user_sleep)
+    - [12 hours](user_sleep)
+    - [1 hours](user_sleep)
+    - [23 hours](user_sleep)
+    - [9 hours](user_sleep)
+    - [12](user_sleep)
+    - [2.5](user_sleep)
+    - [0](user_sleep)
+    - [10](user_sleep)
+    - [4](user_sleep)
+    - Get more exercise
+    - [low](stress)
+    - [low](stress) stress level
+    - [high](stress)
+    - [High](stress)
+    - [medium](stress)
+    - [High](stress) stress right now
+    - [Regularly](exercise)
+    - [regularly](exercise)
+    - [Sometimes](exercise)
+    - I exercise [Sometimes](exercise)
+    - [No](exercise) i dont workout 
+    - [No](exercise)
+    - I drink [5](user_water_intake) liters of water
+    - [5](user_water_intake) ltr of water
+    - [15](user_water_intake) ltr of water
+    - [5.8](user_water_intake) ltr of water
+    - [05](user_water_intake) ltr of water
+    - [8](user_water_intake) ltr
+    - [12](user_water_intake) ltr
+    - [2.5](user_water_intake) ltr
+    - [1](user_water_intake) liters
+    - [1.8](user_water_intake) liters
+    - [1.3](user_water_intake)
+    - [10](user_water_intake)        
+    - [2.5](user_water_intake)
+    - [5](user_water_intake)
+    - I sleep for [8](user_sleep) hours
+    - [4](user_sleep) hours
+    - [20](user_sleep) hours
+    - [9](user_sleep) hours
+    - [0](user_sleep) hours
+    - [No sleep](user_sleep)
+    - [24](user_sleep)
+    - [0](user_sleep)
+    - [8](user_sleep)
+    - [11](user_sleep)
+    - [344](user_sleep) minutes
+    - I have [not slept](user_sleep) for days
+    - [No sleep](user_sleep)
+    - I have [kidney cancer](user_problem) 
+    - I have [Sheehan's syndrome](user_problem)
+    - I have [Myasthenia Gravis](user_problem) 
+    - I have [sun allergy](user_problem)
+    - [sun allergy](user_problem)
+    - [Allergy](user_problem)
+    - [AIDS](user_problem)
+    - [pda](user_problem) 
+    - [salivary gland tumors](user_problem)
+    - might have [asthma](user_problem), [AIDS](user_problem)
+    - ate more junk food
+    - eat better
+    - spend more time on my phone
+    - procrastinate
+    - Go to bed earlier
+    - Don't stay up so late
+    - try to make some time to meditate
+    - i dont eat pretty healthy overall
+    - lots of fruits and vegetables
+    - I ate a salad
+    - too many snacks
+    - too many sweets
+    - too much junk food
+    - a lot of carbs
+    - too much fatty food
+
+
+- intent: response1
+  examples: |
+    - [True](confirm_data_intake)
+    - [False](confirm_data_intake)
+
+- intent: response2
+  examples: |
+    - [True](confirm_health_intake)
+    - [False](confirm_health_intake)

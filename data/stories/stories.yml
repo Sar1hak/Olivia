@@ -1,0 +1,201 @@
+version: "2.0"
+
+stories:
+
+- story: get_personal_info
+  steps:
+  - action: utter_take_info
+  - intent: response1
+    entities:
+    - confirm_data_intake: "True"
+  - slot_was_set:
+    - confirm_data_intake: "True"
+  - action: personal_data_form
+  - active_loop: personal_data_form
+  - active_loop: null
+  - action: action_submit_personal_data
+  - action: utter_personal_data_summary
+  - action: utter_info_thanks
+
+- story: get_personal_info + reinput
+  steps:
+  - action: utter_take_info
+  - intent: response1
+    entities:
+    - confirm_data_intake: "True"
+  - slot_was_set:
+    - confirm_data_intake: "True"
+  - action: personal_data_form
+  - active_loop: personal_data_form
+  - active_loop: null
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: affirm
+    entities:
+    - confirm_data_intake: "True"
+  - slot_was_set:
+    - confirm_data_intake: "True"
+  - action: personal_data_form
+  - action: action_submit_personal_data
+  - action: utter_personal_data_summary
+  - action: utter_info_thanks
+
+- story: get_personal_info_continue + no_reinput
+  steps:
+  - action: utter_take_info
+  - intent: response1
+    entities:
+    - confirm_data_intake: "True"
+  - slot_was_set:
+    - confirm_data_intake: "True"
+  - action: personal_data_form
+  - active_loop: personal_data_form
+  - active_loop: null
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: deny
+    entities:
+    - confirm_data_intake: "False"
+  - slot_was_set:
+    - confirm_data_intake: "False"
+  - action: utter_no_worries
+  - action: action_submit_personal_data
+  - action: utter_personal_data_summary
+  - action: utter_info_thanks
+
+- story: get_personal_info none
+  steps:
+  - action: utter_take_info
+  - intent: response1
+    entities:
+    - confirm_data_intake: "False"
+  - slot_was_set:
+    - confirm_data_intake: "False"
+  - action: utter_no_worries
+
+
+
+
+
+- story: get_health_info
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: problem
+  - action: utter_take_health_info
+  - intent: response2
+    entities:
+    - confirm_health_intake: "True"
+  - slot_was_set:
+    - confirm_health_intake: "True"
+  - action: health_form
+  - active_loop: health_form
+  - active_loop: null
+  - action: action_submit_health_data
+  - action: utter_info_thanks
+  - action: action_disease_evaluation
+  - action: utter_take_info
+
+- story: get_health_info none
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: problem
+  - action: utter_take_health_info
+  - intent: response2
+    entities:
+    - confirm_health_intake: "False"
+  - slot_was_set:
+    - confirm_health_intake: "False"
+  - action: utter_anything_else
+
+- story: get_health_info_continue + reinput
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: problem
+  - action: utter_take_health_info
+  - intent: response2
+    entities:
+    - confirm_health_intake: "True"
+  - slot_was_set:
+    - confirm_health_intake: "True"
+  - action: health_form
+  - active_loop: health_form
+  - active_loop: null
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: affirm
+    entities:
+    - confirm_data_intake: "True"
+  - slot_was_set:
+    - confirm_data_intake: "True"
+  - action: health_form
+  - action: action_submit_health_data
+  - action: utter_info_thanks
+  - action: action_disease_evaluation
+  - action: utter_take_info
+
+
+- story: get_health_info_continue + no_reinput
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: problem
+  - action: utter_take_health_info
+  - intent: response2
+    entities:
+    - confirm_health_intake: "True"
+  - slot_was_set:
+    - confirm_health_intake: "True"
+  - action: health_form
+  - active_loop: health_form
+  - active_loop: null
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: deny
+    entities:
+    - confirm_data_intake: "False"
+  - slot_was_set:
+    - confirm_data_intake: "False"
+  - action: utter_no_worries
+  - action: utter_anything_else
+
+
+- story: get_health_info + happy
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+
+- story: get_disease_info
+  steps:
+  - intent: enquire
+  - action: action_enquire
+  - action: utter_anything_else
+
+
+- story: get_disease_info
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: enquire
+  - action: action_enquire
+
+- story: anything else? - yes
+  steps:
+  - action: utter_anything_else
+  - intent: affirm
+  - action: utter_welcome
+
+- story: anything else? - no
+  steps:
+  - action: utter_anything_else
+  - intent: deny
+
+- story: joke
+  steps:
+  - intent: jokes
+  - action: utter_joke

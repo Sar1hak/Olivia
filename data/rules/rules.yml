@@ -1,0 +1,134 @@
+version: "2.0"
+
+rules:
+
+- rule: activate personal data form
+  steps:
+  - action: utter_take_info
+  - intent: response1
+    entities:
+    - confirm_data_intake: True
+  - slot_was_set:
+    - confirm_data_intake: True
+  - action: personal_data_form
+  - active_loop: personal_data_form
+
+- rule: deactivate personal data form
+  condition:
+  - active_loop: personal_data_form
+  steps:
+  - active_loop: null
+  - action: action_submit_personal_data
+  - action: utter_personal_data_summary
+  - action: utter_info_thanks
+
+
+- rule: continue personal data form
+  condition:
+  - active_loop: personal_data_form
+  steps:
+  - action: utter_ask_continue
+  - intent: affirm
+    entities:
+    - confirm_data_intake: True
+  - slot_was_set:
+    - confirm_data_intake: True
+  - action: personal_data_form
+  - active_loop: null
+  - action: action_submit_personal_data
+  - action: utter_personal_data_summary
+  - action: utter_info_thanks
+
+
+- rule: don't continue personal data form
+  condition:
+  - active_loop: personal_data_form
+  steps:
+  - action: utter_ask_continue
+  - intent: deny
+  - action: utter_no_worries
+  - action: action_deactivate_loop
+  - active_loop: null
+
+- rule: chitchat in personal data form
+  condition:
+  - active_loop: personal_data_form
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_ask_continue
+
+- rule: out of scope in personal data form
+  condition:
+  - active_loop: personal_data_form
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - action: utter_ask_continue
+
+
+
+
+
+
+
+
+
+- rule: activate health form
+  steps:
+  - action: utter_take_health_info
+  - intent: response2
+    entities:
+    - confirm_health_intake: True
+  - slot_was_set:
+    - confirm_health_intake: True
+  - action: health_form
+  - active_loop: health_form
+
+- rule: deactivate health form
+  condition:
+  - active_loop: health_form
+  steps:
+  - active_loop: null
+  - action: action_disease_evaluation
+  - action: utter_take_info
+
+
+- rule: continue health form
+  condition:
+  - active_loop: health_form
+  steps:
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: health_form
+  - active_loop: null
+  - action: action_disease_evaluation
+  - action: utter_take_info
+
+- rule: don't continue health form
+  condition:
+  - active_loop: health_form
+  steps:
+  - action: utter_ask_continue
+  - intent: deny
+  - action: utter_no_worries
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_take_info
+
+- rule: chitchat in health form
+  condition:
+  - active_loop: health_form
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - action: utter_ask_continue
+
+
+- rule: out of scope in health form
+  condition:
+  - active_loop: health_form
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - action: utter_ask_continue
