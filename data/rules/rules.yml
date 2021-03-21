@@ -90,8 +90,7 @@ rules:
   - active_loop: health_form
   steps:
   - active_loop: null
-  - action: action_disease_evaluation
-  - action: utter_take_info
+  - action: action_submit_health_data
 
 
 - rule: continue health form
@@ -102,8 +101,7 @@ rules:
   - intent: affirm
   - action: health_form
   - active_loop: null
-  - action: action_disease_evaluation
-  - action: utter_take_info
+  - action: action_submit_health_data
 
 - rule: don't continue health form
   condition:
@@ -114,7 +112,7 @@ rules:
   - action: utter_no_worries
   - action: action_deactivate_loop
   - active_loop: null
-  - action: utter_take_info
+  - action: utter_anything_else
 
 - rule: chitchat in health form
   condition:
