@@ -212,6 +212,7 @@ class ActionSubmitHealthData(Action):
         exercise, sleep, water, stress, problems ="","","","",""
 
         exercise = tracker.get_slot("exercise")
+        print(exercise)
         sleep = tracker.get_slot("sleep")
         water = tracker.get_slot("water")
         stress = tracker.get_slot("stress")
@@ -294,37 +295,40 @@ class ActionEnquire(Action):
                     # Continue with further information
                     ask=[{"label":"Yes","value":"/personal_data{'slot_name':'yes'}"},
                             {"label":"No","value":"/personal_data{'slot_name':'no'}"}]
-                    message={"payload":"buttons","gender":ask}
+                    message={"payload":"buttons","response":ask}
                     dispatcher.utter_message(text=f"Would you like to know further about {name} ?",json_message=message)
-                    
-                    enquiry_options=[{"label":"Symptoms","value":"/personal_data{'slot_name':'symptoms'}"},
-                        {"label":"Causes","value":"/personal_data{'slot_name':'causes'}"},
-                        {"label":"Risk Factors","value":"/personal_data{'slot_name':'risk_factor'}"},
-                        {"label":"Treatment","value":"/personal_data{'slot_name':'treatment'}"},
-                        {"label":"Medication","value":"/personal_data{'slot_name':'medication'}"},
-                        {"label":"Home Remedies","value":"/personal_data{'slot_name':'home_remedies'}"},
-                        {"label":"Link","value":"/personal_data{'slot_name':'link'}"},
-                        {"label":"All","value":"/personal_data{'slot_name':'all'}"}]
-                    enquiry_value={"payload":"dropDown","data":enquiry_options}
-                    dispatcher.utter_message(text="Select what you would like to view:",json_message=enquiry_value)
+                    #dispatcher.utter_button_template(buttons=ask)
+                    if message =="yes":
+                        enquiry_options=[{"label":"Symptoms","value":"/personal_data{'slot_name':'symptoms'}"},
+                                         {"label":"Causes","value":"/personal_data{'slot_name':'causes'}"},
+                                         {"label":"Risk Factors","value":"/personal_data{'slot_name':'risk_factor'}"},
+                                         {"label":"Treatment","value":"/personal_data{'slot_name':'treatment'}"},
+                                         {"label":"Medication","value":"/personal_data{'slot_name':'medication'}"},
+                                         {"label":"Home Remedies","value":"/personal_data{'slot_name':'home_remedies'}"},
+                                         {"label":"Link","value":"/personal_data{'slot_name':'link'}"},
+                                         {"label":"All","value":"/personal_data{'slot_name':'all'}"}]
+                        enquiry_value={"payload":"dropDown","data":enquiry_options}
+                        dispatcher.utter_message(text="Select what you would like to view:",json_message=enquiry_value)
 
 
-                    if enquiry_value == "All":
-                        dispatcher.utter_message(
-                            text=f"Symptoms: {data_file['symptoms']}")
-                        dispatcher.utter_message(
-                            text=f"Causes: {data_file['causes']}")
-                        dispatcher.utter_message(
-                            text=f"Risk Factors: {data_file['risk_factor']}")
-                        dispatcher.utter_message(
-                            text=f"Treatment: {data_file['treatment']}")
-                        dispatcher.utter_message(
-                            text=f"Medication: {data_file['medication']}")
-                        dispatcher.utter_message(
-                            text=f"Home Remedies: {data_file['home_remedies']}")
+                        if enquiry_value == "All":
+                            dispatcher.utter_message(
+                                text=f"Symptoms: {data_file['symptoms']}")
+                            dispatcher.utter_message(
+                                text=f"Causes: {data_file['causes']}")
+                            dispatcher.utter_message(
+                                text=f"Risk Factors: {data_file['risk_factor']}")
+                            dispatcher.utter_message(
+                                text=f"Treatment: {data_file['treatment']}")
+                            dispatcher.utter_message(
+                                text=f"Medication: {data_file['medication']}")
+                            dispatcher.utter_message(
+                                text=f"Home Remedies: {data_file['home_remedies']}")
+                        else:
+                            dispatcher.utter_message(
+                                text=f" {data_file[enquiry_value]}")
                     else:
-                        dispatcher.utter_message(
-                            text=f" {data_file[enquiry_value]}")
+                        dispatcher.utter_message(text=f"Cool")
                 else:
                     dispatcher.utter_message(
                         text=f"I do not recognize {name}, are you sure it is correctly spelled?")
@@ -505,3 +509,68 @@ class ActionSubmitPersonalData(Action):
   - action: utter_info_thanks
 
 '''
+
+
+
+
+
+
+
+import requests
+
+class ActionGetNews(Action):
+    def name(self) -> Text:
+        return "action_get_news"
+        
+    """
+    def get_request():
+        import requests
+
+        url = ('http://newsapi.org/v2/everything?'
+               'q=tesla&'
+               'from=2021-02-18&'
+               'sortBy=publishedAt&'
+               'apiKey=ff669753f7a74ace97b7aabb419655ab')
+        api_key = "ff669753f7a74ace97b7aabb419655ab"
+        response = requests.get(url)
+        print (response.json())
+
+        
+        #headers = {'Authorization': 'Bearer example-auth-code'}
+        # #payload = {'name':'Mark', email: 'mark@bearer.sh'}
+        # 
+        # #response =  requests.post(url, headers=headers, json=payload)
+        # 
+        # #response_API = requests.get(url)
+        # #print(response_API.status_code)
+        # #data = response_API.text
+        # ### Load data in json format
+        # #parse_json = json.loads(data)
+        # #active_case = parse_json['articles']['description']
+        # #print(active_case)
+        return response.json()
+    """
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[EventType]:
+        """Once we have all the information, attempt to add it to the
+        Google Drive database"""
+        print("qwertyuil")
+
+        dispatcher.utter_message(
+                        text=f"Getting News values")
+        
+        
+        url = ('https://jsonplaceholder.typicode.com/todos/1')
+        #api_key = "ff669753f7a74ace97b7aabb419655ab"
+        response = requests.get(url)
+        print (response.json())
+
+        data = response.json()
+        dispatcher.utter_message(
+                        text=json.dumps(data))
+        return []
