@@ -38,8 +38,8 @@ intents:
 entities:
 - user_name
 - age
-- personal_history
-- user_contact
+- history
+- phone_num
 - exercise
 - user_water_intake
 - user_sleep
@@ -48,7 +48,7 @@ entities:
 - disease_name
 - stress
 - blood_type
-- user_mail
+- email
 - confirm_data_intake
 - confirm_health_intake
 - confirm_problem_intake
@@ -59,24 +59,30 @@ entities:
 - enquire_name
 
 slots:
-  person_name:
+  user_name:
     type: text
+    influence_conversation: false
   age:
     type: float
+    influence_conversation: false
     min_value: 0.0
     max_value:  150.0
   gender:
     type: categorical
+    influence_conversation: false
     values:
     - "Male"
     - "Female"
     - "Others"
   history:
     type: text
+    influence_conversation: false
   phone_num:
     type: text
+    influence_conversation: false
   blood_type:
     type: categorical
+    influence_conversation: false
     values:
     - "A+"
     - "B+"
@@ -88,16 +94,22 @@ slots:
     - "O-"
   email:
     type: text
+    influence_conversation: false
   exercise:
-    type: any
-  water:
     type: text
-  sleep:
+    influence_conversation: false
+  user_water_intake:
     type: text
+    influence_conversation: false
+  user_sleep:
+    type: text
+    influence_conversation: false
   stress:
-    type: any
+    type: text
+    influence_conversation: false
   language:
     type: categorical
+    influence_conversation: false
     values:
     - english
   confirm_data_intake:
@@ -134,11 +146,14 @@ slots:
   - "symptoms"
   - "None"
   relation:
-    type: any
+    type: text
+    influence_conversation: false
   facts:
-    type: any
+    type: text
+    influence_conversation: false
   enquire_name:
     type: categorical
+    influence_conversation: false
     values:
       - "all"
       - "symptoms"
@@ -200,7 +215,7 @@ responses:
       payload: '/response2{{"confirm_health_intake": "True"}}'
     - title: "No"
       payload: '/respons2{{"confirm_health_intake": "False"}}'
-  utter_ask_person_name:
+  utter_ask_user_name:
   - text: "Enter your name:"
   - text: "What is your name?"
   utter_ask_age:
@@ -278,10 +293,10 @@ responses:
         payload: '/health_data{{"exercise":"Average"}}'
       - title: "Unfit"
         payload: '/health_data{{"exercise":"Unfit"}}'
-  utter_ask_sleep:
+  utter_ask_user_sleep:
   - text: "How much sleep did you get last night?"
   - text: "Average amout of sleep you get:"
-  utter_ask_water:
+  utter_ask_user_water_intake:
   - text: "Water intake per Day(in liters)"
   - text: What is the amout of water you drink on daily basis?
   utter_ask_stress:
@@ -329,7 +344,7 @@ responses:
   - text: "You've submitted the following answers:\n
             - Name: {user_name}\n
             - Age: {age}\n
-            - Contact No.: {user_contact}\n
+            - Contact No.: {phone_num}\n
             - Exercised?: {exercise}\n
             - Sleep: {user_sleep}\n
             - Water in take: {user_water_intake}\n
@@ -463,7 +478,7 @@ actions:
 
 forms:
   personal_data_form:
-    person_name:
+    user_name:
       - type: from_entity
         entity: user_name
       - type: from_text
@@ -480,7 +495,7 @@ forms:
         intent: personal_data
     phone_num:
       - type: from_entity
-        entity: user_contact
+        entity: phone_num
       - type: from_text
         intent: personal_data
     blood_type:
@@ -490,7 +505,7 @@ forms:
         intent: personal_data
     email:
       - type: from_entity
-        entity: user_mail
+        entity: email
       - type: from_text
         intent: personal_data
   suggestion_form:
@@ -502,7 +517,7 @@ forms:
         entity: exercise
       - type: from_text
         intent: health_data
-    water:
+    user_water_intake:
       - type: from_entity
         entity: user_water_intake
       - type: from_text
@@ -512,7 +527,7 @@ forms:
         entity: stress
       - type: from_text
         intent: health_data
-    sleep:
+    user_sleep:
       - type: from_entity
         entity: user_sleep
       - type: from_text
@@ -524,6 +539,6 @@ forms:
         intent: health_data
     history:
       - type: from_entity
-        entity: personal_history
+        entity: history
       - type: from_text
         intent: health_data

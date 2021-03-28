@@ -51,7 +51,7 @@ class ValidatePersonalDataForm(FormValidationAction):
         
         return slots_mapped_in_domain
     
-    def validate_person_name(
+    def validate_user_name(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
@@ -170,7 +170,7 @@ class ActionSubmitPersonalDataForm(Action):
 
         
         if tracker.get_slot('confirm_data_intake') == True:
-            user_name = tracker.get_slot("person_name")
+            user_name = tracker.get_slot("user_name")
             age = tracker.get_slot("age")
             #gender = tracker.get_latest_entity_values("gender")
             gender = tracker.get_slot("gender")
@@ -250,7 +250,7 @@ class ValidateHealthDataForm(FormValidationAction):
         print(f"Exercise = {slot_value} length = {len(slot_value)}")
         return {"exercise": slot_value}
 
-    def validate_water(
+    def validate_user_water_intake(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
@@ -258,7 +258,7 @@ class ValidateHealthDataForm(FormValidationAction):
         domain: DomainDict,
     ) -> Dict[Text, Any]:
 
-        print(f"Water in take = {slot_value} length = {len(slot_value)}")
+        print(f"user_water_intake = {slot_value} length = {len(slot_value)}")
         
         import string
         #Removing unnecessary cahracters from string
@@ -268,9 +268,9 @@ class ValidateHealthDataForm(FormValidationAction):
 
         if value <= 1 and value>=50:
             dispatcher.utter_message(text=f"No way you drink that amount. I'm assuming you mis-spelled.")
-            return {"water": None}
+            return {"user_water_intake": None}
         else:
-            return {"water": value}
+            return {"user_water_intake": value}
 
     def validate_stress(
         self,
@@ -283,7 +283,7 @@ class ValidateHealthDataForm(FormValidationAction):
         print(f"Stress value = {slot_value} length = {len(slot_value)}")
         return {"stress": slot_value}
     
-    def validate_sleep(
+    def validate_user_sleep(
         self,
         slot_value: Any,
         dispatcher: CollectingDispatcher,
@@ -291,7 +291,7 @@ class ValidateHealthDataForm(FormValidationAction):
         domain: DomainDict,
     ) -> Dict[Text, Any]:
         
-        print(f"Sleep value = {slot_value} length = {len(slot_value)}")
+        print(f"user_sleep value = {slot_value} length = {len(slot_value)}")
 
         import string
         #Removing unnecessary cahracters from string
@@ -299,7 +299,7 @@ class ValidateHealthDataForm(FormValidationAction):
         nodigs=all.translate(all, string.digits)
         value = slot_value.translate(all, nodigs)
 
-        return {"sleep": value}
+        return {"user_sleep": value}
     
     def validate_relation(
         self,
@@ -339,14 +339,14 @@ class ActionSubmitHealthDataForm(Action):
         Google Drive database"""
 
         import datetime
-        exercise, sleep, water, stress, problems ="","","","",""
+        exercise, user_sleep, user_water_intake, stress, problems ="","","","",""
         print("Strart")
         if tracker.get_slot('confirm_health_intake') == "True":
             print(tracker.get_slot('confirm_health_intake'))
             exercise = tracker.get_slot("exercise")
             #print(exercise)
-            sleep = tracker.get_slot("sleep")
-            water = tracker.get_slot("water")
+            user_sleep = tracker.get_slot("user_sleep")
+            user_water_intake = tracker.get_slot("user_water_intake")
             stress = tracker.get_slot("stress")
             problems = tracker.get_slot("problems")
             date = datetime.datetime.now().strftime("%d/%m/%Y")
@@ -354,12 +354,12 @@ class ActionSubmitHealthDataForm(Action):
             #sales_form_config = domain.get("forms", {}).get("personal_data_form", {})
             #sales_form_required_slots = list(sales_form_config.keys())
         
-            #user_name = domain.get("forms", {}).get("personal_data_form", {"person_name"})
+            #user_name = domain.get("forms", {}).get("personal_data_form", {"user_name"})
         
             dispatcher.utter_message("Thanks for the information!")
         
         
-        health_info = [date, exercise, sleep, water, stress, problems]
+        health_info = [date, exercise, user_sleep, user_water_intake, stress, problems]
         print(health_info)
         #database = "diseases.json"
         #data = json.loads(open(database).read())
@@ -521,10 +521,10 @@ class ActionSubmitPersonalData(Action):
     def required_slots(tracker):
 
         if tracker.get_slot('confirm_data_intake') == True:
-            return ['person_name','age','gender','history','phone_num','blood_type','email','exercise','water','sleep','stress',
+            return ['user_name','age','gender','history','phone_num','blood_type','email','exercise','user_water_intake','user_sleep','stress',
                     'confirm_data_intake']
         else:
-            return ['history','blood_type','exercise','water','sleep','stress','confirm_data_intake']
+            return ['history','blood_type','exercise','user_water_intake','user_sleep','stress','confirm_data_intake']
     
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
 
@@ -534,11 +534,11 @@ class ActionSubmitPersonalData(Action):
                 self.from_intent(intent="deny", value=False),
                 self.from_intent(intent="personal_data", value=True),
             ],
-            "sleep": [
-                self.from_entity(entity="sleep"),
+            "user_sleep": [
+                self.from_entity(entity="user_sleep"),
                 self.from_intent(intent="deny", value="None"),
             ],
-            "water": [
+            "user_water_intake": [
                 self.from_text(intent="personal_data"),
             ],
             "history": [
@@ -567,7 +567,7 @@ class ActionSubmitPersonalData(Action):
         import datetime
         
         if tracker.get_slot('confirm_data_intake') == True:
-            user_name = tracker.get_slot("person_name")
+            user_name = tracker.get_slot("user_name")
             age = tracker.get_slot("age")
             #gender = tracker.get_latest_entity_values("gender")
             gender = tracker.get_slot("gender")
@@ -771,13 +771,13 @@ class ActionRename(Action):
         domain: Dict[Text, Any],
         ) -> List[EventType]:
 
-        SlotSet("person_name", None)
+        SlotSet("user_name", None)
         dispatcher.utter_message("Enter your name: ")
 
         for blob in tracker.latest_message['entities']:
             print(tracker.latest_message)
-            if blob['entity'] == 'person_name':
+            if blob['entity'] == 'user_name':
                 name = blob['value']
-                return [SlotSet("person_name", name)]
+                return [SlotSet("user_name", name)]
 
 

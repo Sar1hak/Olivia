@@ -141,17 +141,17 @@ stories:
   - slot_was_set:
     - exercise: "Regularly"
   - slot_was_set:
-    - requested_slot: water
+    - requested_slot: user_water_intake
   - slot_was_set:
-    - water: "2 liters"
+    - user_water_intake: "2 liters"
   - slot_was_set:
     - requested_slot: stress
   - slot_was_set:
     - stress: "high"
   - slot_was_set:
-    - requested_slot: sleep
+    - requested_slot: user_sleep
   - slot_was_set:
-    - sleep: "8 hours"
+    - user_sleep: "8 hours"
   - slot_was_set:
     - request_slot: relation
   - slot_was_set:
@@ -191,17 +191,17 @@ stories:
   - slot_was_set:
     - exercise: "Regularly"
   - slot_was_set:
-    - requested_slot: water
+    - requested_slot: user_water_intake
   - slot_was_set:
-    - water: "2 liters"
+    - user_water_intake: "2 liters"
   - slot_was_set:
     - requested_slot: stress
   - slot_was_set:
     - stress: "high"
   - slot_was_set:
-    - requested_slot: sleep
+    - requested_slot: user_sleep
   - slot_was_set:
-    - sleep: "8 hours"
+    - user_sleep: "8 hours"
   - slot_was_set:
     - request_slot: relation
   - slot_was_set:
@@ -239,17 +239,17 @@ stories:
   - slot_was_set:
     - exercise: "Regularly"
   - slot_was_set:
-    - requested_slot: water
+    - requested_slot: user_water_intake
   - slot_was_set:
-    - water: "2 liters"
+    - user_water_intake: "2 liters"
   - slot_was_set:
     - requested_slot: stress
   - slot_was_set:
     - stress: "high"
   - slot_was_set:
-    - requested_slot: sleep
+    - requested_slot: user_sleep
   - slot_was_set:
-    - sleep: "8 hours"
+    - user_sleep: "8 hours"
   - slot_was_set:
     - request_slot: relation
   - slot_was_set:
@@ -293,9 +293,9 @@ stories:
   - action: personal_data_form
   - active_loop: personal_data_form
   - slot_was_set:
-    - requested_slot: person_name
+    - requested_slot: user_name
   - slot_was_set:
-    - person_name: "James Thomson"
+    - user_name: "James Thomson"
   - slot_was_set:
     - requested_slot: age
   - slot_was_set:
@@ -337,9 +337,9 @@ stories:
   - action: personal_data_form
   - active_loop: personal_data_form
   - slot_was_set:
-    - requested_slot: person_name
+    - requested_slot: user_name
   - slot_was_set:
-    - person_name: "James Thomson"
+    - user_name: "James Thomson"
   - slot_was_set:
     - requested_slot: age
   - slot_was_set:
@@ -389,9 +389,9 @@ stories:
   - action: personal_data_form
   - active_loop: personal_data_form
   - slot_was_set:
-    - requested_slot: person_name
+    - requested_slot: user_name
   - slot_was_set:
-    - person_name: "James Thomson"
+    - user_name: "James Thomson"
   - slot_was_set:
     - requested_slot: age
   - slot_was_set:

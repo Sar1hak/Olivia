@@ -4,7 +4,6 @@ responses:
   - text: "I only understand English, I'm sorry."
   utter_out_of_scope/other:
   - text: "I can't help you with that, I'm sorry."
-  
   utter_chitchat/ask_builder:
   - text: "One of the smart engineers in India using rasa"
   - text: "The engineers from India"
@@ -33,7 +32,6 @@ responses:
   - text: "I am indeed a bot 🤖"
   utter_chitchat/ask_ishuman:
   - text: "I'm not a human, I'm a bot! 🤖"
-
   utter_chitchat/ask_time:
   - text: "It's the most wonderful time of the year!"
   - text: "It's party time!"
@@ -56,7 +54,6 @@ responses:
   - text: "I'd tell you, but there's restricted access to that chunk of memory."
   - text: "Believe it or not, I actually am not spying on your personal information."
   - text: "You're the second person now to ask me that. Rihanna was the first."
-
   utter_chitchat/ask_whatspossible:
   - text: "You can ask me about different diseases in the world or booking an appointment with an actual Doctor."
   utter_chitchat/ask_wherefrom:
@@ -67,11 +64,13 @@ responses:
   - text: "I hope you are yourself."
   - text: "Who do you think you are?"
   - text: "Unfortunately, I haven't been programmed with the amount of necessary philosophy knowledge to answer that."
-
   utter_chitchat/handleinsult:
   - text: "That's not very nice 😢"
   - text: "That wasn't very nice. Perhaps try an anger management class?"
   - text: "I'll pretend I didn't process that mean comment."
+  - text: "Wow! hold up"
+  - text: "This wont happen here"
+  - text: "Bad language Alert!!"
   utter_chitchat/nicetomeetyou:
   - text: "Likewise!"
   - text: "Thank you. It is a pleasure to meet you as well!"
