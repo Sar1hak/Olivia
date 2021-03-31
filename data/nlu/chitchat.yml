@@ -694,3 +694,46 @@ nlu:
     - who am i
     - who are I ?
     - who may i ?
+- intent: chitchat/handleinsult
+  examples: |
+    - fuck off
+    - son of a bitch
+    - what the f
+    - What the fuck
+    - wtf
+    - bullshit
+    - motherfucker
+    - mf
+    - milf
+    - bullshit
+    - nigga
+    - Nigga
+    - Kill
+    - kill him
+    - asshole
+    - A**hole
+    - Asshole
+    - N****
+- intent: chitchat/telljoke
+  examples: |
+    - tell me joke
+    - Tell me a Joke
+    - i want to hear a joke
+    - I would love to hear a joke right now
+    - Hey joke please
+    - Joke
+    - Do you know any joke?
+    - Do you know any joke
+    - do you know something funny?
+    - joke please
+    - can you tell me a joke?
+    - Can you tell a Joke?
+    - I like to hear something funny
+    - Act funny
+- intent: chitchat/nicetomeetyou
+  examples: |
+    - Nice to meet you
+    - nice to meet you
+    - pleasure to meet you
+    - nice to meet you Chi
+    - 

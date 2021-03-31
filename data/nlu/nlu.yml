@@ -364,25 +364,6 @@ nlu:
     - so saad
     - so sad
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - Am I talking to a human?
-    - You a bot?
-
-
-- intent: how_are_you
-  examples:  |
-    - how are you
-    - how is it going
-    - How is life
-    - how do you do
-    - How r u
-
-
-
 - intent: gender
   examples:  |
     - male
@@ -425,7 +406,7 @@ nlu:
     - does [ptsd](disease_name) exist
     - does [Black Death](disease_name) exist
     - ever heard of [Circadian rhythm sleep disorder](disease_name)
-    - are [pikachu](disease_name) and [charmander](disease_name) pokemon?
+    - are [cancer](disease_name) and [covid](disease_name) bad?
     - is [rasa](disease_name) harmful?
     - i want to enquire about [parotid tumors](disease_name)
     - can you tell me about [parotid tumors](disease_name)?
@@ -476,21 +457,6 @@ nlu:
     - my name is [John Evers](user_name)
     - my name is [Joseph Parson](user_name)
     - my name is [Monica Ser](user_name)
-    - in past i suffered from [Cancer](personal_history)
-    - [None](personal_history)
-    - [none](personal_history)
-    - [valvular Heart disease](personal_history)
-    - [Digeorge syndrome](personal_history)
-    - [zollinger](personal_history)
-    - [No past history](personal_history)
-    - i had [corona](personal_history) few months ago
-    - i had [pad](personal_history) few months ago
-    - i had [AIDS](personal_history) few months ago
-    - i had [valvular Heart disease](personal_history) few months ago
-    - i had [AIDS](personal_history) few months ago
-    - i had [valvular Heart disease](personal_history) few months ago
-    - i had [heart transplant](personal_history)
-    - i had [fracture](personal_history)
     - [9690917043](user_contact)
     - [1234567890](user_contact)
     - [9999999999](user_contact)
@@ -503,12 +469,12 @@ nlu:
     - my blood type is [O negative](blood_type)
     - [AB negative](blood_type)
     - [B positive](blood_type)
-    - [hero@gmail.com](user_mail)
-    - [rambo@hotmail.com](user_mail)
-    - [rambo@hotmail.com](user_mail)
-    - [mgk@rocketmail.in](user_mail)
+    - [hero@gmail.com](email)
+    - [rambo@hotmail.com](email)
+    - [rambo@hotmail.com](email)
+    - [mgk@rocketmail.in](email)
     - mgk@rocketmail.in
-    - my official email id is [sarthak@pp.gdf.in](user_mail)
+    - my official email id is [sarthak@pp.gdf.in](email)
     - [Male](gender)
     - [Female](gender)
     - [Transgender](gender)
@@ -549,18 +515,8 @@ nlu:
     - I want to do something else
     - I changed my mind
 
-- intent: jokes
-  examples: |
-    - i need money
-    - where is the money
-    - get me some money
-    - give me money
-
-
 - intent: problem
   examples: |
-    - I have a problem
-    - Problem with me
     - I think i have [Asthma](disease_name)
     - I have [Asthma](disease_name)
     - I have [adenomyosis](disease_name)
@@ -579,6 +535,23 @@ nlu:
     - [Asthma](disease_name)
     - [adjustment disorders](disease_name)
     - [Pseudomembranous Colitis](disease_name)
+    - I guess i have [adjustment disorders](disease_name)
+    - I guess i have [corona](disease_name)
+
+
+
+- intent: unknow_problem
+  examples: |
+    - I have a problem
+    - Problem with me
+    - im sick
+    - I'm sick
+    - i am tired
+    - I dont know
+    - idk
+    - i dont know but i am worried
+    - idk im sick
+    - idk im just a little worried
     - I fucked up
     - i think i have a disease
     - can you predict my disease
@@ -588,16 +561,6 @@ nlu:
     - Blood Blood
     - I need help
     - guess my disease
-    - I guess i have [adjustment disorders](disease_name)
-    - I guess i have [corona](disease_name)
-    - im sick
-    - I'm sick
-    - i am tired
-    - I dont know
-    - idk
-    - i dont know but i am worried
-    - idk im sick
-    - idk im just a little worried
 
 
 - intent: thank
@@ -645,14 +608,14 @@ nlu:
 
 - intent: health_data
   examples: |
-    - in past i suffered from [Cancer](user_problem)
-    - in past i suffered from [Parotid tumors](user_problem)
-    - in past i suffered from [compulsive gambling](user_problem)
-    - in past i suffered from [pda](user_problem)
-    - i had [corona](user_problem) few months ago
-    - i had [PDA](user_problem) few months ago
-    - i had [kidney cancer](user_problem) few months ago
-    - i had [Renal Cancer](user_problem) few months ago
+    - in past i suffered from [Cancer](personal_history)
+    - in past i suffered from [Parotid tumors](personal_history)
+    - in past i suffered from [compulsive gambling](personal_history)
+    - in past i suffered from [pda](personal_history)
+    - i had [corona](personal_history) few months ago
+    - i had [PDA](personal_history) few months ago
+    - i had [kidney cancer](personal_history) few months ago
+    - i had [Renal Cancer](personal_history) few months ago
     - a full [8 hours](user_sleep)
     - a full [24 hours](user_sleep)
     - a full [1 hours](user_sleep)
@@ -684,7 +647,18 @@ nlu:
     - [Sometimes](exercise)
     - I exercise [Sometimes](exercise)
     - [No](exercise) i dont workout 
-    - [No](exercise)
+    - [Yes](exercise)
+    - [Transportation](exercise)
+    - [Walk](exercise)
+    - I walk to my office [Walk](exercise)
+    - [Work from Home](exercise)
+    - I do [Work from Home](exercise)
+    - I am physicaly [Fit](exercise)
+    - [Fit](exercise)
+    - [Average](exercise) level of exercise
+    - [Average](exercise)
+    - [Unfit](exercise)
+    - [Unfit](exercise) and unhealthy lifestyle
     - I drink [5](user_water_intake) liters of water
     - [5](user_water_intake) ltr of water
     - [15](user_water_intake) ltr of water
@@ -695,7 +669,12 @@ nlu:
     - [2.5](user_water_intake) ltr
     - [1](user_water_intake) liters
     - [1.8](user_water_intake) liters
-    - [1.3](user_water_intake)
+    - [3](user_water_intake)
+    - [2](user_water_intake)
+    - [5](user_water_intake)
+    - [2.3](user_water_intake)
+    - [1.9](user_water_intake)
+    - [4.5](user_water_intake)
     - [10](user_water_intake)        
     - [2.5](user_water_intake)
     - [5](user_water_intake)
@@ -707,21 +686,39 @@ nlu:
     - [No sleep](user_sleep)
     - [24](user_sleep)
     - [0](user_sleep)
+    - [6](user_sleep)
+    - [5](user_sleep)
+    - [4](user_sleep)
     - [8](user_sleep)
     - [11](user_sleep)
     - [344](user_sleep) minutes
     - I have [not slept](user_sleep) for days
     - [No sleep](user_sleep)
-    - I have [kidney cancer](user_problem) 
-    - I have [Sheehan's syndrome](user_problem)
-    - I have [Myasthenia Gravis](user_problem) 
-    - I have [sun allergy](user_problem)
-    - [sun allergy](user_problem)
-    - [Allergy](user_problem)
-    - [AIDS](user_problem)
-    - [pda](user_problem) 
-    - [salivary gland tumors](user_problem)
-    - might have [asthma](user_problem), [AIDS](user_problem)
+    - I have [kidney cancer](personal_history)
+    - I have [Sheehan's syndrome](personal_history)
+    - I have [Myasthenia Gravis](personal_history)
+    - I have [sun allergy](personal_history)
+    - [sun allergy](personal_history)
+    - [Allergy](personal_history) five years ago
+    - [AIDS](personal_history)
+    - [pda](personal_history) 
+    - [salivary gland tumors](personal_history)
+    - might have [asthma](personal_history), [AIDS](personal_history)
+    - in past i suffered from [Cancer](personal_history)
+    - [None]{"entity": "personal_history", "value": "Nothing"}
+    - [Nothing](personal_history)
+    - [valvular Heart disease](personal_history)
+    - [Digeorge syndrome](personal_history)
+    - [zollinger](personal_history)
+    - [No past history](personal_history)
+    - i had [corona](personal_history) few months ago
+    - i had [pad](personal_history) few months ago
+    - i had [AIDS](personal_history) few months ago
+    - i had [valvular Heart disease](personal_history) few months ago
+    - i had [AIDS](personal_history) few months ago
+    - i had [valvular Heart disease](personal_history) few months ago
+    - i had [heart transplant](personal_history)
+    - i had [fracture](personal_history)
     - ate more junk food
     - eat better
     - spend more time on my phone
@@ -739,7 +736,7 @@ nlu:
     - too much fatty food
 
 
-- intent: response1
+- intent: response3
   examples: |
     - [True](confirm_data_intake)
     - [False](confirm_data_intake)
@@ -748,3 +745,52 @@ nlu:
   examples: |
     - [True](confirm_health_intake)
     - [False](confirm_health_intake)
+
+- intent: response1
+  examples: |
+    - [True](confirm_problem_intake)
+    - [False](confirm_problem_intake)
+
+- intent: news_facts
+  examples: |
+    - Tell some current affairs
+    - Do you know about any latest news
+    - Current Affairs
+    - Whats the news?
+    - what is the news
+    - Any new news update?
+    - Tell me some facts 
+    - is there any news ?
+
+- intent: responseTreatment
+  examples: |
+    - [treatments](confirm_cure_intake)
+    - I would like to know about [treatments](confirm_cure_intake)
+    - [medications](confirm_cure_intake)
+    - I would like to know about [medications](confirm_cure_intake)
+    - [home remedies](confirm_cure_intake)
+    - I would like to know about [home remedies](confirm_cure_intake)
+    - [Nothing](confirm_cure_intake)
+    - [None]{"entity": "confirm_cure_intake", "value": "Nothing"}
+
+- intent: responseCause
+  examples: |
+    - [Causes](confirm_cause_intake)
+    - I would like to know about [Causes](confirm_cause_intake)
+    - [Symptoms](confirm_cause_intake)
+    - I would like to know about [Symptoms](confirm_cause_intake)
+    - [Nothing](confirm_cause_intake)
+    - [None]{"entity": "confirm_cause_intake", "value": "Nothing"}
+
+
+
+- intent: wrong_name
+  examples: |
+    - My name is not Mr. Potato Head
+    - My name is not Don John
+    - I would like to re enter my name
+    - I missplled my name
+    - there is an issue, that is not my name
+    - that is not my name
+    - change my name
+    - Please change my name

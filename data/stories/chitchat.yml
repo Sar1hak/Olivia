@@ -5,6 +5,13 @@ stories:
   - intent: chitchat
   - action: utter_chitchat
 
+- story: chitchat continue
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: chitchat
+  - action: utter_chitchat
+
 - story: deny chitchat
   steps:
   - intent: chitchat
