@@ -59,9 +59,9 @@ stories:
   - action: utter_ask_further_cure_info
   - intent: responseTreatment
     entities:
-    - confirm_cure_intake: "None"
+    - confirm_cure_intake: "Nothing"
   - slot_was_set:
-    - confirm_cure_intake: "None"
+    - confirm_cure_intake: "Nothing"
   - action: utter_anything_else
 
 
@@ -116,9 +116,9 @@ stories:
   - action: utter_ask_further_symptoms_info
   - intent: responseCause
     entities:
-    - confirm_cause_intake: "None"
+    - confirm_cause_intake: "Nothing"
   - slot_was_set:
-    - confirm_cause_intake: "None"
+    - confirm_cause_intake: "Nothing"
   - action: utter_anything_else
 
 
@@ -153,7 +153,7 @@ stories:
   - slot_was_set:
     - user_sleep: "8 hours"
   - slot_was_set:
-    - request_slot: relation
+    - requested_slot: relation
   - slot_was_set:
     - relation: "Good"
   - slot_was_set:
@@ -163,7 +163,7 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
-  - action: action_submit_health_data
+  - action: action_submit_health_data_form
   - action: utter_take_info
 
 - story: no health form
@@ -203,7 +203,7 @@ stories:
   - slot_was_set:
     - user_sleep: "8 hours"
   - slot_was_set:
-    - request_slot: relation
+    - requested_slot: relation
   - slot_was_set:
     - relation: "Good"
   - slot_was_set:
@@ -221,7 +221,7 @@ stories:
   - slot_was_set:
     - confirm_health_intake: "True"
   - action: health_form
-  - action: action_submit_health_data
+  - action: action_submit_health_data_form
   - action: utter_take_info
 
 - story: get health form + no reinput
@@ -251,7 +251,7 @@ stories:
   - slot_was_set:
     - user_sleep: "8 hours"
   - slot_was_set:
-    - request_slot: relation
+    - requested_slot: relation
   - slot_was_set:
     - relation: "Good"
   - slot_was_set:
@@ -319,7 +319,7 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
-  - action: action_submit_personal_data
+  - action: action_submit_personal_data_form
   - action: action_disease_evaluation
 
 - story: get_personal_info + reinput
@@ -371,7 +371,7 @@ stories:
   - slot_was_set:
     - confirm_data_intake: "True"
   - action: personal_data_form
-  - action: action_submit_personal_data
+  - action: action_submit_personal_data_form
   - action: action_disease_evaluation
 
 - story: get_personal_info_continue + no_reinput
