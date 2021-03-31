@@ -469,12 +469,12 @@ nlu:
     - my blood type is [O negative](blood_type)
     - [AB negative](blood_type)
     - [B positive](blood_type)
-    - [hero@gmail.com](user_mail)
-    - [rambo@hotmail.com](user_mail)
-    - [rambo@hotmail.com](user_mail)
-    - [mgk@rocketmail.in](user_mail)
+    - [hero@gmail.com](email)
+    - [rambo@hotmail.com](email)
+    - [rambo@hotmail.com](email)
+    - [mgk@rocketmail.in](email)
     - mgk@rocketmail.in
-    - my official email id is [sarthak@pp.gdf.in](user_mail)
+    - my official email id is [sarthak@pp.gdf.in](email)
     - [Male](gender)
     - [Female](gender)
     - [Transgender](gender)
@@ -541,6 +541,7 @@ nlu:
 
 
 - intent: unknow_problem
+  examples: |
     - I have a problem
     - Problem with me
     - im sick
@@ -704,8 +705,8 @@ nlu:
     - [salivary gland tumors](personal_history)
     - might have [asthma](personal_history), [AIDS](personal_history)
     - in past i suffered from [Cancer](personal_history)
-    - [None](personal_history)
-    - [none](personal_history)
+    - [None]{"entity": "personal_history", "value": "Nothing"}
+    - [Nothing](personal_history)
     - [valvular Heart disease](personal_history)
     - [Digeorge syndrome](personal_history)
     - [zollinger](personal_history)
@@ -769,7 +770,8 @@ nlu:
     - I would like to know about [medications](confirm_cure_intake)
     - [home remedies](confirm_cure_intake)
     - I would like to know about [home remedies](confirm_cure_intake)
-    - [None](confirm_cure_intake)
+    - [Nothing](confirm_cure_intake)
+    - [None]{"entity": "confirm_cure_intake", "value": "Nothing"}
 
 - intent: responseCause
   examples: |
@@ -777,7 +779,9 @@ nlu:
     - I would like to know about [Causes](confirm_cause_intake)
     - [Symptoms](confirm_cause_intake)
     - I would like to know about [Symptoms](confirm_cause_intake)
-    - [None](confirm_cause_intake)
+    - [Nothing](confirm_cause_intake)
+    - [None]{"entity": "confirm_cause_intake", "value": "Nothing"}
+
 
 
 - intent: wrong_name
