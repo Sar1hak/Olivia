@@ -202,8 +202,8 @@ class ActionSubmitPersonalDataForm(Action):
         #    for row_num, data in enumerate(personal_info):
         #        worksheet.write_row(row_num, 0, data)
         
-        pd.Series(personal_info)
-        personal_info.to_excel('aFileName.xlsx')
+        #pd.Series(personal_info)
+        #personal_info.to_excel('aFileName.xlsx')
         '''
         # ADDIND TO GOOGLE DRIVE SHEETS
         try:
