@@ -2,6 +2,7 @@ version: "2.0"
 session_config:
   session_expiration_time: 30  # value in minutes, 0 means infinitely long
   carry_over_slots_to_new_session: true  # set to false to forget slots between sessions
+
 intents:
 - greet
 - goodbye
@@ -20,7 +21,6 @@ intents:
 - enquire
 - gender
 - images
-- how_are_you
 - know
 - Doctor
 - problem
@@ -43,7 +43,6 @@ entities:
 - exercise
 - user_water_intake
 - user_sleep
-- number
 - gender
 - disease_name
 - stress
@@ -68,12 +67,8 @@ slots:
     min_value: 0.0
     max_value:  150.0
   gender:
-    type: categorical
+    type: text
     influence_conversation: false
-    values:
-    - "Male"
-    - "Female"
-    - "Others"
   history:
     type: text
     influence_conversation: false
@@ -81,17 +76,8 @@ slots:
     type: text
     influence_conversation: false
   blood_type:
-    type: categorical
+    type: text
     influence_conversation: false
-    values:
-    - "A+"
-    - "B+"
-    - "AB+"
-    - "O+"
-    - "A-"
-    - "B-"
-    - "AB-"
-    - "O-"
   email:
     type: text
     influence_conversation: false
@@ -113,38 +99,20 @@ slots:
     values:
     - english
   confirm_data_intake:
-    type: categorical
+    type: text
     influence_conversation: true
-    values:
-    - "True"
-    - "False"
   confirm_health_intake:
-    type: categorical
+    type: text
     influence_conversation: true
-    values:
-    - "True"
-    - "False"
   confirm_problem_intake:
-    type: categorical
+    type: text
     influence_conversation: true
-    values:
-    - "True"
-    - "False"
   confirm_cure_intake:
-   type: categorical
-   influence_conversation: true
-   values:
-   - "treatment"
-   - "medication"
-   - "home_remedies"
-   - "None"
+    type: text
+    influence_conversation: true
   confirm_cause_intake:
-  type: categorical
-  influence_conversation: true
-  values:
-  - "causes"
-  - "symptoms"
-  - "None"
+    type: text
+    influence_conversation: true
   relation:
     type: text
     influence_conversation: false
@@ -152,17 +120,8 @@ slots:
     type: text
     influence_conversation: false
   enquire_name:
-    type: categorical
+    type: text
     influence_conversation: false
-    values:
-      - "all"
-      - "symptoms"
-      - "causes"
-      - "risk_factor"
-      - "treatment"
-      - "medication"
-      - "home_remedies"
-      - "link"
 
 responses:
   utter_do_you_know_the_problem:
@@ -200,7 +159,7 @@ responses:
   utter_symptoms_unknown:
   - text: I'll given you some options to help you out :)
   utter_time:
-  - text: How long have you been experiencing the [disease_name]
+  - text: How long have you been experiencing the {disease_name}
   utter_take_info:
   - text: Would you like to share some personal information with us before beginning?
     buttons:
@@ -444,8 +403,8 @@ responses:
         payload: '/responseTreatment{{"confirm_cure_intake": "medications"}}'
       - title: "Home Remedies"
         payload: '/responseTreatment{{"confirm_cure_intake": "home_remedies"}}'
-      - title: "None"
-        payload: '/responseTreatment{{"confirm_cure_intake": "None"}}'
+      - title: "Nothing"
+        payload: '/responseTreatment{{"confirm_cure_intake": "Nothing"}}'
   utter_ask_further_symptoms_info:
     - text: "What should i Tell you about ?"
       buttons:
@@ -453,8 +412,8 @@ responses:
         payload: '/responseCause{{"confirm_cause_intake": "Symptoms"}}'
       - title: "Causes"
         payload: '/responseCause{{"confirm_cause_intake": "Causes"}}'
-      - title: "None"
-        payload: '/responseCause{{"confirm_cause_intake": "None"}}'
+      - title: "Nothing"
+        payload: '/responseCause{{"confirm_cause_intake": "Nothing"}}'
   utter_default_fallback:
     - text: Sorry I am unable to process your response
     - text: I apologize for the inconvenience. I am unable to process your response.
@@ -533,7 +492,7 @@ forms:
       - type: from_text
         intent: health_data
     relation:
-      - type: from entity
+      - type: from_entity
         entity: relation
       - type: from_text
         intent: health_data
