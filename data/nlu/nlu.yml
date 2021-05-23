@@ -9,33 +9,33 @@ nlu:
     - hello there
     - good morning
     - good evening
-    - moin
+    - moin  
     - hey there
     - let's go
-    - hey dude
+    - hey dog
     - goodmorning
     - goodevening
     - good afternoon
     - yo
     - hey bot
     - hey bot!
-    - hey dude
+    - hey girl
     - hey hey
     - hey let's talk
-    - hey Chi
-    - hey chi
+    - hey Olivia
+    - hey Olivia
     - hey ther
     - hey there
-    - hey there boy
+    - hey there girl
     - hey there..
     - hey, let's talk
-    - hey, chi!
+    - hey, Olivia!
     - heya
     - heyho
     - heyo
     - hhola
     - hi !
-    - hi Mister
+    - hi Miss
     - hi again
     - hi can you speak ?
     - hi folks
@@ -193,10 +193,10 @@ nlu:
     - ok good
     - ok great
     - ok i accept
-    - ok chi
+    - ok Olivia
     - ok, I behave now
     - ok, I understood
-    - ok, Chi
+    - ok, Olivia
     - ok...
     - okay
     - okay cool
@@ -364,136 +364,6 @@ nlu:
     - so saad
     - so sad
 
-- intent: gender
-  examples:  |
-    - male
-    - female
-    - Im a male
-    - I'm a female
-
-- intent: know
-  examples: |
-    - I have [rasa](disease_name)
-    - [rasa](disease_name)
-    - Do I have [rasa](disease_name)
-    - help me with [rasa](disease_name) 
-
-- intent: Doctor
-  examples: |
-    -  I would like to talk to a doctor
-    -  Connect me to a Pediatrition
-
-
-- intent: faq
-  examples:  |
-    - what is comapany?
-    - can you tell me what company is?
-    - what does company do
-
-
-- intent: enquire
-  examples: |
-    - What is [Asthma](disease_name)
-    - What is [Circadian rhythm sleep disorder](disease_name) ?
-    - What is [corona](disease_name)????
-    - What is [Asthma](disease_name) ?
-    - what is [Psoriasis](disease_name)
-    - What is [Zollinger-Ellison syndrome](disease_name)
-    - What is [adjustment disorders](disease_name)
-    - what is [ptsd](disease_name)
-    - does [Black Death](disease_name) exist
-    - does [asthma](disease_name) exist
-    - does [ptsd](disease_name) exist
-    - does [Black Death](disease_name) exist
-    - ever heard of [Circadian rhythm sleep disorder](disease_name)
-    - are [cancer](disease_name) and [covid](disease_name) bad?
-    - is [rasa](disease_name) harmful?
-    - i want to enquire about [parotid tumors](disease_name)
-    - can you tell me about [parotid tumors](disease_name)?
-    - Explain [ptsd](disease_name)
-    - explain [black Death](disease_name)
-    - tell me about [cancer](disease_name)
-
-- intent: remedy
-  examples: |
-   - I have [Asthma](disease_name) is there a cure
-   - I have [Asthma](disease_name) in a remedy
-   - Recommend cure for [Asthma](disease_name)
-   - Help me with [Asthma](disease_name)
-   - I need a cure for [Asthma](disease_name)
-
-- intent: images
-  examples: |
-    - How does [Cancer](disease_name) looks like?
-    - Image for [Cancer](disease_name)
-    - images for [Asthma](disease_name)
-    - Show me how [Cancer](disease_name) looks
-    - show me everything
-
-
-- intent: personal_data
-  examples: |
-    - [Sarthak](user_name)
-    - [Jimmy](user_name)
-    - [David](user_name)
-    - [Harry Potter](user_name)
-    - [Jeremy Paul](user_name)
-    - [Helen Keller](user_name)
-    - My name is [sarthak Chauhan](user_name)
-    - My name is [Sherlock Holmes](user_name)
-    - My name is [Charles Dickens](user_name)
-    - My name is [Joey Tribbany](user_name)
-    - Im [sherlock homes](user_name)
-    - [david smith](user_name)
-    - My age is [99](age) years
-    - [10](age)
-    - im [69](age) years old
-    - my name is [Earl Ring](user_name)
-    - my name is [Felicia Cosby](user_name)
-    - my name is [Frances Kunkle](user_name)
-    - my name is [Greg King](user_name)
-    - my name is [james culpit](user_name)
-    - my name is [Jermaine Mccleery](user_name)
-    - my name is [John Evers](user_name)
-    - my name is [Joseph Parson](user_name)
-    - my name is [Monica Ser](user_name)
-    - [9690917043](user_contact)
-    - [1234567890](user_contact)
-    - [9999999999](user_contact)
-    - [6969696968](user_contact)
-    - [6666345252](user_contact)
-    - my mobile number is [09090909090](user_contact)
-    - contact number [696969696969](user_contact)
-    - connect with me on [+91706433422](user_contact)
-    - [A positive](blood_type)
-    - my blood type is [O negative](blood_type)
-    - [AB negative](blood_type)
-    - [B positive](blood_type)
-    - [hero@gmail.com](email)
-    - [rambo@hotmail.com](email)
-    - [rambo@hotmail.com](email)
-    - [mgk@rocketmail.in](email)
-    - mgk@rocketmail.in
-    - my official email id is [sarthak@pp.gdf.in](email)
-    - [Male](gender)
-    - [Female](gender)
-    - [Transgender](gender)
-    - [Bisexual](gender)
-    - [Lesbian](gender)
-    - i am  a [Female](gender)
-    - [Others](gender)
-    - [25](age) years old
-    - [69](age) years old
-    - [18](age) years old
-    - [4](age) years old
-    - [99](age)
-    - [22](age)
-    - [5](age)
-    - [19](age)
-    - [69](age)
-    - [70](age)
-    - [86](age)
-    - my age is around [1](age) 
 
 - intent: out_of_scope
   examples: |
@@ -515,60 +385,13 @@ nlu:
     - I want to do something else
     - I changed my mind
 
-- intent: problem
-  examples: |
-    - I think i have [Asthma](disease_name)
-    - I have [Asthma](disease_name)
-    - I have [adenomyosis](disease_name)
-    - I have [adjustment disorders](disease_name)
-    - i have [Mesenteric ischemia](disease_name)
-    - I have [valvular Heart disease](disease_name)
-    - i have [Psoriasis](disease_name)
-    - i have [asthma](disease_name)
-    - Help me with [Asthma](disease_name)
-    - Do i have [cancer](disease_name)
-    - Do i have [pseudomembranous colitis](disease_name)
-    - Do i have [adjustment disorders](disease_name)
-    - test for [corona](disease_name)
-    - I would like to take a test for [insomnia](disease_name)
-    - [kidney](disease_name)
-    - [Asthma](disease_name)
-    - [adjustment disorders](disease_name)
-    - [Pseudomembranous Colitis](disease_name)
-    - I guess i have [adjustment disorders](disease_name)
-    - I guess i have [corona](disease_name)
-
-
-
-- intent: unknow_problem
-  examples: |
-    - I have a problem
-    - Problem with me
-    - im sick
-    - I'm sick
-    - i am tired
-    - I dont know
-    - idk
-    - i dont know but i am worried
-    - idk im sick
-    - idk im just a little worried
-    - I fucked up
-    - i think i have a disease
-    - can you predict my disease
-    - Predict my disease
-    - I have disturbing symptoms
-    - I am bleeding
-    - Blood Blood
-    - I need help
-    - guess my disease
-
 
 - intent: thank
   examples: |
     - Cool. Thanks
     - Great, thanks
     - Thank you
-    - Thank you Chi
+    - Thank you Olivia
     - Thank you so much
     - Thank's!
     - Thanks
@@ -584,7 +407,7 @@ nlu:
     - danke
     - great thanks
     - ok thanks
-    - ok thanks chi
+    - ok thanks Olivia
     - ok thanks!
     - perfect thank you
     - thank u
@@ -605,192 +428,203 @@ nlu:
     - thanks for your information
     - thanks f
 
-
-- intent: health_data
+- intent: bot_challenge
   examples: |
-    - in past i suffered from [Cancer](personal_history)
-    - in past i suffered from [Parotid tumors](personal_history)
-    - in past i suffered from [compulsive gambling](personal_history)
-    - in past i suffered from [pda](personal_history)
-    - i had [corona](personal_history) few months ago
-    - i had [PDA](personal_history) few months ago
-    - i had [kidney cancer](personal_history) few months ago
-    - i had [Renal Cancer](personal_history) few months ago
-    - a full [8 hours](user_sleep)
-    - a full [24 hours](user_sleep)
-    - a full [1 hours](user_sleep)
-    - only [four hours](user_sleep)
-    - only [ten hours](user_sleep)
-    - only [seventeen hours](user_sleep)
-    - only [11 hours](user_sleep)
-    - only [19 hours](user_sleep)
-    - about [six hours](user_sleep)
-    - [11 hours](user_sleep)
-    - [12 hours](user_sleep)
-    - [1 hours](user_sleep)
-    - [23 hours](user_sleep)
-    - [9 hours](user_sleep)
-    - [12](user_sleep)
-    - [2.5](user_sleep)
-    - [0](user_sleep)
-    - [10](user_sleep)
-    - [4](user_sleep)
-    - Get more exercise
-    - [low](stress)
-    - [low](stress) stress level
-    - [high](stress)
-    - [High](stress)
-    - [medium](stress)
-    - [High](stress) stress right now
-    - [Regularly](exercise)
-    - [regularly](exercise)
-    - [Sometimes](exercise)
-    - I exercise [Sometimes](exercise)
-    - [No](exercise) i dont workout 
-    - [Yes](exercise)
-    - [Transportation](exercise)
-    - [Walk](exercise)
-    - I walk to my office [Walk](exercise)
-    - [Work from Home](exercise)
-    - I do [Work from Home](exercise)
-    - I am physicaly [Fit](exercise)
-    - [Fit](exercise)
-    - [Average](exercise) level of exercise
-    - [Average](exercise)
-    - [Unfit](exercise)
-    - [Unfit](exercise) and unhealthy lifestyle
-    - I drink [5](user_water_intake) liters of water
-    - [5](user_water_intake) ltr of water
-    - [15](user_water_intake) ltr of water
-    - [5.8](user_water_intake) ltr of water
-    - [05](user_water_intake) ltr of water
-    - [8](user_water_intake) ltr
-    - [12](user_water_intake) ltr
-    - [2.5](user_water_intake) ltr
-    - [1](user_water_intake) liters
-    - [1.8](user_water_intake) liters
-    - [3](user_water_intake)
-    - [2](user_water_intake)
-    - [5](user_water_intake)
-    - [2.3](user_water_intake)
-    - [1.9](user_water_intake)
-    - [4.5](user_water_intake)
-    - [10](user_water_intake)        
-    - [2.5](user_water_intake)
-    - [5](user_water_intake)
-    - I sleep for [8](user_sleep) hours
-    - [4](user_sleep) hours
-    - [20](user_sleep) hours
-    - [9](user_sleep) hours
-    - [0](user_sleep) hours
-    - [No sleep](user_sleep)
-    - [24](user_sleep)
-    - [0](user_sleep)
-    - [6](user_sleep)
-    - [5](user_sleep)
-    - [4](user_sleep)
-    - [8](user_sleep)
-    - [11](user_sleep)
-    - [344](user_sleep) minutes
-    - I have [not slept](user_sleep) for days
-    - [No sleep](user_sleep)
-    - I have [kidney cancer](personal_history)
-    - I have [Sheehan's syndrome](personal_history)
-    - I have [Myasthenia Gravis](personal_history)
-    - I have [sun allergy](personal_history)
-    - [sun allergy](personal_history)
-    - [Allergy](personal_history) five years ago
-    - [AIDS](personal_history)
-    - [pda](personal_history) 
-    - [salivary gland tumors](personal_history)
-    - might have [asthma](personal_history), [AIDS](personal_history)
-    - in past i suffered from [Cancer](personal_history)
-    - [None]{"entity": "personal_history", "value": "Nothing"}
-    - [Nothing](personal_history)
-    - [valvular Heart disease](personal_history)
-    - [Digeorge syndrome](personal_history)
-    - [zollinger](personal_history)
-    - [No past history](personal_history)
-    - i had [corona](personal_history) few months ago
-    - i had [pad](personal_history) few months ago
-    - i had [AIDS](personal_history) few months ago
-    - i had [valvular Heart disease](personal_history) few months ago
-    - i had [AIDS](personal_history) few months ago
-    - i had [valvular Heart disease](personal_history) few months ago
-    - i had [heart transplant](personal_history)
-    - i had [fracture](personal_history)
-    - ate more junk food
-    - eat better
-    - spend more time on my phone
-    - procrastinate
-    - Go to bed earlier
-    - Don't stay up so late
-    - try to make some time to meditate
-    - i dont eat pretty healthy overall
-    - lots of fruits and vegetables
-    - I ate a salad
-    - too many snacks
-    - too many sweets
-    - too much junk food
-    - a lot of carbs
-    - too much fatty food
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
 
 
-- intent: response3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- intent: author
   examples: |
-    - [True](confirm_data_intake)
-    - [False](confirm_data_intake)
+    - Tell about Sarthak
+    - Who is sarthak ?
+    - what do you know about sarthak
+    - sarthak's achivements
+    - Do you know Sarthak???
 
-- intent: response2
+- intent: ask_news
   examples: |
-    - [True](confirm_health_intake)
-    - [False](confirm_health_intake)
+    - tell some news
+    - what is going on in the world?
+    - whats going on in the world
+    - Do you know some latest news
+    - exclusive news
+    - Please tell me News
+    - Search some News for me
 
-- intent: response1
+- intent: gpt
   examples: |
-    - [True](confirm_problem_intake)
-    - [False](confirm_problem_intake)
+    - What exactly is Geophysics??
+    - What is Geophysical Technology ?
+    - Geophysical Technology?
+    - geophysical technology
+    - explain geophysics
+    - explain geophysical technology
+    - what is gpt
 
-- intent: news_facts
+- intent: ml
   examples: |
-    - Tell some current affairs
-    - Do you know about any latest news
-    - Current Affairs
-    - Whats the news?
-    - what is the news
-    - Any new news update?
-    - Tell me some facts 
-    - is there any news ?
+    - what is ml?
+    - what is machine learning?
+    - machine learning??
+    - ML
 
-- intent: responseTreatment
+- intent: ask_weather
   examples: |
-    - [treatments](confirm_cure_intake)
-    - I would like to know about [treatments](confirm_cure_intake)
-    - [medications](confirm_cure_intake)
-    - I would like to know about [medications](confirm_cure_intake)
-    - [home remedies](confirm_cure_intake)
-    - I would like to know about [home remedies](confirm_cure_intake)
-    - [Nothing](confirm_cure_intake)
-    - [None]{"entity": "confirm_cure_intake", "value": "Nothing"}
+    - Are there any meteorological changes that I need to be aware of?
+    - Are we in for a scorcher?
+    - Beautiful day, isn't it?
+    - Can I ask you something about weather
+    - Can we expect any thunderstorms?
+    - Do you have good weather?
+    - How is the weather today?
+    - How is the weather?
+    - How is weather today
+    - Is it hot or cold?
+    - Is it humid out there today?
+    - Is it quite breezy outside?
+    - Is it raining
+    - Is it raining?
+    - Looks like a beautiful day hey?
+    - Nice day out today?
+    - Weather?
+    - What is the temperature today?
+    - What is the weather at your place?
+    - What is the weather for tomorrow?
+    - What is the weather in newyork?
+    - What's it like out there?
+    - What's the weather forecast?
+    - What's the weather like over there?
+    - What's the weather like where I am right now?
+    - What's the weather like?
+    - Will I require my raincoat today?
+    - Will the skies be clear today?
+    - Will we build a snowman today?
+    - excellent - is it hot in [Berlin](location)?
+    - how is the weather
+    - how is the weather ?
+    - how is the weather in [berlin](location)?
+    - how is the weather?
+    - how's the weather ?
+    - how's the weather in [berlin](location)
+    - how's the weather?
+    - how's weather
+    - hows the waether
+    - hows the weather in bot world
+    - hows the weather today in [berlin](location)?
+    - is it hot ?
+    - is it hot outside ?
+    - is it sunny
+    - is the sun out where you are?
+    - is the sun out where zou are?
+    - it is cold
+    - temperature?
+    - the weather today
+    - weatger
+    - weather
+    - weather?
+    - well, if you wish: what about the weather
+    - what about the weather in [Lüneburg](location)
+    - what is the temperature
+    - what is the wather
+    - what is the weatehr
+    - what is the weather
+    - what is the weather in [Berlin](location)
+    - what is the weather in [zurich](location)?
+    - what is the weather like where you are?
+    - what is the weather like?
+    - what is the whether today
+    - what the wheather like?
+    - what"s the weather
+    - what's the weather
+    - what's the weather like
+    - what's the weather like in [LA](location)
+    - what's the weather like where you are?
+    - what's the weather like?
+    - what's the weather today
+    - what's the weather today?
+    - whats the temperature
+    - whats the temperature in [delhi](location)?
+    - whats the weather in [berlin](location)?
+    - whats the weather like tomorrow?
+    - wheather at you location?
+    - wheather be like at your place?
 
-- intent: responseCause
+- intent: ask_time
   examples: |
-    - [Causes](confirm_cause_intake)
-    - I would like to know about [Causes](confirm_cause_intake)
-    - [Symptoms](confirm_cause_intake)
-    - I would like to know about [Symptoms](confirm_cause_intake)
-    - [Nothing](confirm_cause_intake)
-    - [None]{"entity": "confirm_cause_intake", "value": "Nothing"}
-
-
-
-- intent: wrong_name
-  examples: |
-    - My name is not Mr. Potato Head
-    - My name is not Don John
-    - I would like to re enter my name
-    - I missplled my name
-    - there is an issue, that is not my name
-    - that is not my name
-    - change my name
-    - Please change my name
+    - Can you give me the time?
+    - Can you tell me the time?
+    - Can you tell me what time it is?
+    - Can you tell the time?
+    - Could you tell me the time, please?
+    - Could you tell me the time?
+    - Could you tell me what time is it?
+    - Do you have the time?
+    - Do you know the time?
+    - Do you know what time it is?
+    - Excuse me, what time is it?
+    - Give me the time.
+    - Hi, I need the time.
+    - I need to know what time it is.
+    - Pardon me, but do you know the time?
+    - Tell me the time.
+    - Time, please!
+    - Time?
+    - What is the current time?
+    - What is the exact time?
+    - What is the hour and minute right now?
+    - What is the time?
+    - What might the time be?
+    - What time do we have?
+    - What time have we got?
+    - What time is it in [Berlin](location)?
+    - What time is it right now?
+    - What's the current time?
+    - What's the time right now?
+    - What's the time?
+    - Would you tell me what time it is?
+    - do you have the time?
+    - do you know the current time?
+    - tell me the current time.
+    - tell me the time it is.
+    - tell me the time.
+    - tell me what time you have.
+    - that's true. do you know what time it is?
+    - what is the current time?
+    - what is the time ?
+    - what is the time in [Sydney](location)?
+    - what is the time?
+    - what is time in US ?
+    - what is time is US ?
+    - what is time is USA ?
+    - what time do you have?
+    - what time is it
+    - what time is it?
+    - what time it is
+    - what's the time
+    - whats the time now

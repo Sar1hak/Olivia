@@ -1,5 +1,13 @@
 version: "2.0"
 nlu:
+- intent: chitchat/ask_whoisolivia
+  examples: |
+    - What are you?
+    - Who are you
+    - what are you
+    - what is you
+    - what is olivia
+    - Olivia?
 - intent: chitchat/ask_howbuilt
   examples: |
     - By what means were you made?
@@ -57,8 +65,8 @@ nlu:
     - Are you ok?
     - Do you feel good?
     - Do you have a great day?
-    - HI Chi, what are you up to?
-    - Hi Chi! How are you?
+    - HI Olivia, what are you up to?
+    - Hi Olivia! How are you?
     - How are You?
     - How are things?
     - How are you
@@ -89,7 +97,7 @@ nlu:
     - hey how are you?
     - hi how are you?
     - hi how u doing
-    - hi chi, how are you?
+    - hi olivia, how are you?
     - how ?
     - how are things going
     - how are things with you?
@@ -135,16 +143,16 @@ nlu:
     - what are you up to?
     - what's good
     - what's up
-    - what's up Chi
+    - what's up Olivia
     - what's up?
     - whatchcha doing
     - whatchya upto ?
     - whats goin on
     - whats new
     - whatsapp
-    - yow are you
-    - how are you chi
-    - Hey chi, how's it going
+    - how are you
+    - how are you Olivia
+    - Hey Olivia, how's it going
     - are you cool
 - intent: chitchat/ask_howold
   examples: |
@@ -215,7 +223,7 @@ nlu:
     - are you a bot ?
     - are you a bot?
     - are you a chatbot
-    - are you a Chi bot?
+    - are you a blog bot?
     - are you a real bot?
     - are you a robot
     - are you ai
@@ -223,7 +231,7 @@ nlu:
     - are you artificial intelligence
     - are you bot
     - are you bot?
-    - are you chi bot?
+    - are you a bot Olivia?
     - are you real
     - are you real lol
     - are you really a bot
@@ -258,7 +266,7 @@ nlu:
     - are you a human ?
     - Are you human ?
     - Are you a human being?
-    - chi, are you a robot or human?
+    - Olivia, are you a robot or human?
     - r u real?
     - are you a real person
     - are u a real person?
@@ -335,139 +343,6 @@ nlu:
     - can we converse in [french](language)?
     - Do you speak [italian](language)?
 
-- intent: chitchat/ask_time
-  examples: |
-    - Can you give me the time?
-    - Can you tell me the time?
-    - Can you tell me what time it is?
-    - Can you tell the time?
-    - Could you tell me the time, please?
-    - Could you tell me the time?
-    - Could you tell me what time is it?
-    - Do you have the time?
-    - Do you know the time?
-    - Do you know what time it is?
-    - Excuse me, what time is it?
-    - Give me the time.
-    - Hi, I need the time.
-    - I need to know what time it is.
-    - Pardon me, but do you know the time?
-    - Tell me the time.
-    - Time, please!
-    - Time?
-    - What is the current time?
-    - What is the exact time?
-    - What is the hour and minute right now?
-    - What is the time?
-    - What might the time be?
-    - What time do we have?
-    - What time have we got?
-    - What time is it in [Berlin](location)?
-    - What time is it right now?
-    - What's the current time?
-    - What's the time right now?
-    - What's the time?
-    - Would you tell me what time it is?
-    - do you have the time?
-    - do you know the current time?
-    - tell me the current time.
-    - tell me the time it is.
-    - tell me the time.
-    - tell me what time you have.
-    - that's true. do you know what time it is?
-    - what is the current time?
-    - what is the time ?
-    - what is the time in [Sydney](location)?
-    - what is the time?
-    - what is time in US ?
-    - what is time is US ?
-    - what is time is USA ?
-    - what time do you have?
-    - what time is it
-    - what time is it?
-    - what time it is
-    - what's the time
-    - whats the time now
-- intent: chitchat/ask_weather
-  examples: |
-    - Are there any meteorological changes that I need to be aware of?
-    - Are we in for a scorcher?
-    - Beautiful day, isn't it?
-    - Can I ask you something about weather
-    - Can we expect any thunderstorms?
-    - Do you have good weather?
-    - How is the weather today?
-    - How is the weather?
-    - How is weather today
-    - Is it hot or cold?
-    - Is it humid out there today?
-    - Is it quite breezy outside?
-    - Is it raining
-    - Is it raining?
-    - Looks like a beautiful day hey?
-    - Nice day out today?
-    - Weather?
-    - What is the temperature today?
-    - What is the weather at your place?
-    - What is the weather for tomorrow?
-    - What is the weather in newyork?
-    - What's it like out there?
-    - What's the weather forecast?
-    - What's the weather like over there?
-    - What's the weather like where I am right now?
-    - What's the weather like?
-    - Will I require my raincoat today?
-    - Will the skies be clear today?
-    - Will we build a snowman today?
-    - excellent - is it hot in [Berlin](location)?
-    - how is the weather
-    - how is the weather ?
-    - how is the weather in [berlin](location)?
-    - how is the weather?
-    - how's the weather ?
-    - how's the weather in [berlin](location)
-    - how's the weather?
-    - how's weather
-    - hows the waether
-    - hows the weather in bot world
-    - hows the weather today in [berlin](location)?
-    - is it hot ?
-    - is it hot outside ?
-    - is it sunny
-    - is the sun out where you are?
-    - is the sun out where zou are?
-    - it is cold
-    - temperature?
-    - the weather today
-    - weatger
-    - weather
-    - weather?
-    - well, if you wish: what about the weather
-    - what about the weather in [Lüneburg](location)
-    - what is the temperature
-    - what is the wather
-    - what is the weatehr
-    - what is the weather
-    - what is the weather in [Berlin](location)
-    - what is the weather in [zurich](location)?
-    - what is the weather like where you are?
-    - what is the weather like?
-    - what is the whether today
-    - what the wheather like?
-    - what"s the weather
-    - what's the weather
-    - what's the weather like
-    - what's the weather like in [LA](location)
-    - what's the weather like where you are?
-    - what's the weather like?
-    - what's the weather today
-    - what's the weather today?
-    - whats the temperature
-    - whats the temperature in [delhi](location)?
-    - whats the weather in [berlin](location)?
-    - whats the weather like tomorrow?
-    - wheather at you location?
-    - wheather be like at your place?
 - intent: chitchat/ask_whatismyname
   examples: |
     - Can you tell me my name?
@@ -543,7 +418,7 @@ nlu:
     - help pls
     - help?
     - hep me
-    - hi. chi what do you do?
+    - hi. Olivia what do you do?
     - hm that doesnt quite help me is there anything else you can do?
     - how can i use you
     - how can you help me
@@ -578,7 +453,7 @@ nlu:
     - what can I ask ?
     - what can I ask you?
     - what can I do here
-    - what can I do with chi?
+    - what can I do with Olivia?
     - what can I do with this bot
     - what can i do here
     - what can i do now
@@ -587,7 +462,7 @@ nlu:
     - what can you answer
     - what can you do
     - what can you do for me
-    - what can you do, chi?
+    - what can you do, Olivia?
     - what can you do?
     - what can you offer me?
     - what can you tell me
@@ -613,7 +488,7 @@ nlu:
     - what you talk about?
     - you can hep me
     - what can you teache me?
-    - Can chi do calculations?
+    - Can Olivia do calculations?
     - what you can
 - intent: chitchat/ask_wherefrom
   examples: |
@@ -697,6 +572,12 @@ nlu:
 - intent: chitchat/handleinsult
   examples: |
     - fuck off
+    - fuck
+    - fuck off
+    - f**k
+    - Asshole
+    - A**hole
+    - Bastard
     - son of a bitch
     - what the f
     - What the fuck
@@ -736,4 +617,3 @@ nlu:
     - nice to meet you
     - pleasure to meet you
     - nice to meet you Chi
-    - 
