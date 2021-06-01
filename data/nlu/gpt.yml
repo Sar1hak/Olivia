@@ -1,0 +1,52 @@
+version: "2.0"
+nlu:
+- intent: gpt/ask_whatisgpt
+  examples: |
+    - What is Geophysics/Geophysical Technology?
+    - What is Geophysical Technology?
+    - Geophysics??
+    - Geophysical Technology??
+- intent: gpt/ask_gptuse
+  examples: |
+    - Uses of Geophysical Technology?
+    - Uses of Geophysics?
+    - what are the uses of Geophysical Technology?
+    - what are the uses of Geophysics?
+    - What is Geophysics used for
+    - What is Geophysical Technology used for
+    - Benifits of Geophysics
+- intent: gpt/ask_acquisition
+  examples: |
+    - What is Data Acquisition?
+    - Data Acquisition?
+    - Data Acquisition???
+    - Explain Data acquisiton
+- intent: gpt/ask_processing
+  examples: |
+    - What is Processing?
+    - what is data Processing
+    - data processing?? 
+- intent: gpt/ask_visiualize
+  examples: |
+    - What is Visualization?
+    - visualization?
+    - What is data visualization
+- intent: gpt/ask_modeling
+  examples: |
+    - What is Geophysical Modelling?
+    - What is modeling
+    - what is modelling
+    - what is data modeling??
+    - What is geophysical data modeling
+    - data modelling??
+    - modeling??
+- intent: gpt/ask_interpret
+  examples: |
+    - What is Geophysical Interpretation?
+    - What is data interpretation? 
+    - Geophysical Interpretation?
+    - data interpretation??? 
+- intent: gpt/ask_contains
+  examples: |
+    - What is Geophysics made up of?
+    - What is required to buid Geophysical Technology

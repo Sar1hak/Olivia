@@ -11,3 +11,16 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: respond to gpt question
+  steps:
+  - intent: gpt
+  - action: utter_gpt
+- rule: respond to chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+- rule: respond to author questions
+  steps:
+  - intent: author
+  - action: utter_author

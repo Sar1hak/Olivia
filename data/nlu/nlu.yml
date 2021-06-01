@@ -9,24 +9,24 @@ nlu:
     - hello there
     - good morning
     - good evening
-    - moin  
+    - moin
     - hey there
     - let's go
-    - hey dog
+    - hey dude
     - goodmorning
     - goodevening
     - good afternoon
     - yo
     - hey bot
     - hey bot!
-    - hey girl
+    - hey dude
     - hey hey
     - hey let's talk
     - hey Olivia
     - hey Olivia
     - hey ther
     - hey there
-    - hey there girl
+    - hey there boy
     - hey there..
     - hey, let's talk
     - hey, Olivia!
@@ -35,7 +35,7 @@ nlu:
     - heyo
     - hhola
     - hi !
-    - hi Miss
+    - hi Mister
     - hi again
     - hi can you speak ?
     - hi folks
@@ -459,14 +459,6 @@ nlu:
 
 
 
-- intent: author
-  examples: |
-    - Tell about Sarthak
-    - Who is sarthak ?
-    - what do you know about sarthak
-    - sarthak's achivements
-    - Do you know Sarthak???
-
 - intent: ask_news
   examples: |
     - tell some news
@@ -628,3 +620,69 @@ nlu:
     - what time it is
     - what's the time
     - whats the time now
+
+- intent: user_suggestions
+  examples: |
+    - I have some suggestions for you Olivia
+    - Can I give you some suggestions?
+    - want my suggestion?
+    - do you want my suggestion to improve youself?
+    - I have a suggestion for you
+    - I have a suggestion for Sarthak
+    - I want to suggest Sarthak something
+
+- intent: user_names
+  examples: |
+    - (Sarthak)[name]
+    - (Jimmy)[name]
+    - (David)[name]
+    - (Harry Potter)[name]
+    - (Jeremy Paul)[name]
+    - (Helen Keller)[name]
+    - (sarthak Chauhan)[name]
+    - (Sherlock Holmes)[name]
+    - (Charles Dickens)[name]
+    - (Joey Tribbany)[name]
+    - (Earl Ring)[name]
+    - (Felicia Cosby)[name]
+    - (Frances Kunkle)[name]
+    - (Greg King)[name])
+    - (Rohan Soni)[name]
+    - (Gautam Singh Shekhawat)[name]
+    - (Deepak Saini)[name]
+    - (Arihant Krishaniya)[name]
+    - (Sahil Chaudhary)[name]
+    - (Sparsh Jain)[name]
+    - (Mayan Scahan)[name]
+    - (Ramdev)[name]
+    - (Shriram Rawat)[name]
+    - (Slim shaddy)[name]
+    - (Pablo)[name]
+    - (David Guetta)[name]
+    - (james culpit)[name]
+    - (Jermaine Mccleery)[name]
+    - (John Evers)[name]
+    - (Bella)[name]
+    - (Jasmine)[name]
+    - (Mitali)[name]
+    - (Cherry)[name]
+    - (Niharika)[name]
+    - (Komal Maheshwar)[name]i
+    - (Khushboo)[name]
+    - (Joseph Parson)[name]
+    - (Monica Ser)[name]
+    - My name is (sarthak Chauhan)[name]
+    - My name is (Sherlock Holmes)[name]
+    - My name is (Charles Dickens)[name]
+    - My name is (Joey Tribbany)[name]
+    - Im (sherlock homes)[name]
+    - (david smith)[name]
+    - my name is (Earl Ring)[name]
+    - my name is (Felicia Cosby)[name]
+    - my name is (Frances Kunkle)[name]
+    - my name is (Greg King)[name]
+    - my name is (james culpit)[name]
+    - my name is (Jermaine Mccleery)[name]
+    - my name is (John Evers)[name]
+    - my name is (Joseph Parson)[name]
+    - my name is (Monica Ser)[name]

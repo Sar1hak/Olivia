@@ -8,6 +8,7 @@ stories:
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
+  - action: utter_suggestion
 
 - story: sad path 1
   steps:
@@ -31,10 +32,31 @@ stories:
 
 - story: tell news
   steps:
-  - intent: news
+  - intent: ask_news
   - action: action_get_news
 
 - story: tell weather
   steps:
   - intent: ask_weather
   - action: action_get_weather
+
+- story: tell time
+  steps:
+  - intent: ask_time
+  - action: action_get_time
+
+- story: suggestion- yes
+  steps:
+  - action: utter_suggestion
+  - intent: affirm
+  - slot_was_set:
+    - requested_slot: suggestion
+  - slot_was_set:
+    - suggestion: "Yeah, add more features"
+  - action: utter_happy
+
+- story: suggestion- no
+  steps:
+  - action: utter_suggestion
+  - intent: deny
+  - action: utter_happy

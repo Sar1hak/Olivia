@@ -116,3 +116,52 @@ def get_image(path):
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=7000)
 """
+
+
+class ActionGetTime(Action):
+    def name(self) -> Text:
+        return "action_get_time"
+    
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[EventType]:
+
+        print("Extracting Data from External API ...")
+
+        from datetime import datetime
+        dispatcher.utter_message("According to Indian Standard Time")
+        dispatcher.utter_message(f"Date: ", datetime.now().date())
+        dispatcher.utter_message(f"Time: ", datetime.now().time())
+        return []
+
+class ActionGetName(Action):
+    def name(self) -> Text:
+        return "action_get_name"
+    
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[EventType]:
+
+        # print("Extracting Data from External API ...")
+        message = tracker.latest_message['text']
+        print("Track latest messsage: ",message)
+        SlotSet("name",message)
+        json_response = {
+                "intent": "names",
+                "user_message": [message],
+                "slot":["name"],
+                "type":["text","str"],
+                "next_message": "greet",
+                "next_slot": [""],
+                "next_type":["text","str"]
+               }
+        dispatcher.utter_message(json.dumps(json_response))
+        return []
+        #:
+        #use_entities: []

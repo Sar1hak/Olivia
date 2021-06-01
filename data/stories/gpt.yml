@@ -1,0 +1,39 @@
+version: "2.0"
+stories:
+- story: gpt
+  steps:
+  - intent: gpt
+  - action: utter_gpt
+
+- story: gpt continue
+  steps:
+  - intent: gpt
+  - action: utter_gpt
+  - intent: gpt
+  - action: utter_gpt
+
+- story: deny gpt
+  steps:
+  - intent: gpt
+  - action: utter_gpt
+  - intent: deny
+  - action: utter_nohelp
+
+- story: more gpt
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: gpt
+  - action: utter_gpt
+  - intent: gpt
+  - action: utter_gpt
+
+- story: greet gpt
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: gpt
+  - action: utter_gpt
+
+
+
