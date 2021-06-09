@@ -19,20 +19,7 @@ pipeline:
   ambiguity_threshold: 0.1
 - name: ResponseSelector
   epochs: 100
-  scale_loss: false
-  retrieval_intent: author
-- name: ResponseSelector
-  epochs: 100
-  scale_loss: false
-  retrieval_intent: chitchat
-- name: ResponseSelector
-  epochs: 100
-  scale_loss: false
-  retrieval_intent: gpt
-- name: ResponseSelector
-  epochs: 100
-  scale_loss: false
-  retrieval_intent: out_of_scope
+
 
 policies:
 - name: RulePolicy
