@@ -1,8 +1,10 @@
 <html>
     <body>
         <style>
-            .rw-conversation-container .rw-header{background-color: #EF5700;}
-            .rw-conversation-container .rw-messages-container .rw-message .rw-response{background-color: #EF5700;}
+            
+            .rw-conversation-container .rw-header{background-color: #fd660e;}
+            .rw-conversation-container .rw-messages-container .rw-message .rw-response{background-color: #fed7c2;}
+            .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: #368df1;}
         </style>
         <script>!(function () {
             let e = document.createElement("script"),
@@ -21,7 +23,10 @@
                     subtitle: 'Say hi and start',
                     inputTextFieldHint: "Type a message...",
                     connectingText: "Waiting for server...",
+                    hideWhenNotConnected: false,
                     fullScreenMode: false,
+                    showFullScreenButton: false,
+                    profileAvatar: "https://i.pinimg.com/originals/a5/03/7c/a5037c61e4adefb4b0e695b4683c691d.jpg",
                     params:{
                       images: {
                         dims: {
@@ -29,7 +34,7 @@
                           height: 200,
                         }
                       },
-                      Storage: "session"
+                      storage: "session"
                     }
                     // add other props here
                   },

@@ -24,3 +24,7 @@ rules:
   steps:
   - intent: author
   - action: utter_author
+- rule: respond to ml questions
+  steps:
+  - intent: ml
+  - action: utter_ml

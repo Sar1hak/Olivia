@@ -133,8 +133,8 @@ class ActionGetTime(Action):
 
         from datetime import datetime
         dispatcher.utter_message("According to Indian Standard Time")
-        dispatcher.utter_message(f"Date: ", datetime.now().date())
-        dispatcher.utter_message(f"Time: ", datetime.now().time())
+        dispatcher.utter_message(f"Date: ", str(datetime.now().date()))
+        dispatcher.utter_message(f"Time: ", str(datetime.now().time()))
         return []
 
 class ActionGetName(Action):

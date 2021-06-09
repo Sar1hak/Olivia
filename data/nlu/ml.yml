@@ -1,0 +1,91 @@
+version: "2.0"
+nlu:
+- intent: ml/ask_whatisML
+  examples: |
+    - what is ml?
+    - what is machine learning?
+    - What is Machine Learning?
+    - machine learning??
+    - Machine Learning
+    - ML?
+    - can you explain machine learning
+    - Can you explain Machine Learning
+- intent: ml/ask_whatisrasa
+  examples: |
+    - what is RASA?
+    - What is rasa??
+    - Rasa?
+    - Can you brief me about rasa
+    - Can you tell me more about rasa?
+    - Can you tell me what Rasa does?
+    - Could you tell me more about Rasa?
+    - Give me more information about Rasa
+    - How does Rasa work?
+    - I want to know about rsa
+    - I want to know what rasa actually does that isn't clear to me yet
+    - I want to learn what rasa does
+    - I want to learn what rasa is
+    - I would like to know about rasa
+    - I would like to know more about your product
+    - OK can u brief me Abt rasa
+    - RASA?
+    - Rasa Is?
+    - WHAT IS IT
+    - WHAT IS RASA
+    - What Is rasa?
+    - What can rasa do?
+    - What do you do as a company?
+    - What do you do at Rasa?
+    - What does Rasa build?
+    - What does Rasa do?
+    - What does Rasa make?
+    - What does rasa do exactly?
+    - What exactly is Rasa?
+    - What is Rasa?
+    - What is rasa doing exactly?
+    - What is rasa?
+    - What is the RASA Stack?
+    - What's rasa?
+    - can you explain rasa?
+    - can you pls explain what rasa does
+    - could you tell me more about rasa
+    - explain me what rasa does
+    - explain me what rasa is
+    - how does RASA work?
+    - how does rasa work
+    - how does rasa work?
+    - how rasa works ?
+    - how works rasa
+    - i dont get what rasa is
+    - i havent understood yet what rasa actually is
+    - i want to about rasa
+    - i want to know about rasa
+    - i want to know what rasa does
+    - i want to learn something about rasa
+    - so how does it all work?
+    - sorry tell me about rasa
+    - tell me about rasa
+    - tell me bout rasa
+    - tell me more about rasa
+    - tell me more about your company
+    - what are the componensts of RASA
+    - what can I do with Rasa?
+    - what can i do with rasa
+    - what do you guys do at rasa
+    - what does rasa do
+    - what does rasa do ?
+    - what does rasa do?
+    - what does rasa mean
+    - what is rasa
+    - what is rasa?
+    - what is in rasa
+    - what is it for?
+    - what is rasa
+    - what is rasa actually
+    - what is rasa?
+    - whats rasa
+    - yeah go on explaining what rasa is
+    - RASA IS SOFTWARE?
+    - rasa os
+    - what is Rasa
+

@@ -123,3 +123,10 @@ responses:
   - text: "Analysis of GRACE satellite data over the Ganga river basin using the Convolutional neural network (CNN)  model to learn the spatiotemporal patterns of mismatch between TWS anomalies (TWSA) derived from GRACE and those simulated by NOAH, a widely used land surface model."
   - text: "He conducted Seismic surveys (Horizontal to Vertical Spectral Ratio (HVSR) and Multichannel Analysis of Surface Waves (MASW)) at different locations in Nanital for Groundwater level measurement."
   - text: "Developed and tested a python deep learning API, Libra, that allows users to use machine learning in their workflows efficiently using minimum lines of code."
+  utter_ml/ask_whatisrasa:
+  - text: "Rasa Open Source is a conversational AI framework for that provides machine learning tools for
+           building contextual assistants. You can read more about it here in the docs or on their
+           website https://rasa.com/ ."
+  utter_ml/ask_whatisML:
+  - text: "Machine Learning is teaching computers to learn from data and to improve with experience – instead of being explicitly programmed to do so."
+    image: "https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/firstmachine.jpg"

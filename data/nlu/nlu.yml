@@ -436,29 +436,6 @@ nlu:
     - am I talking to a human?
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - intent: ask_news
   examples: |
     - tell some news
@@ -479,12 +456,6 @@ nlu:
     - explain geophysical technology
     - what is gpt
 
-- intent: ml
-  examples: |
-    - what is ml?
-    - what is machine learning?
-    - machine learning??
-    - ML
 
 - intent: ask_weather
   examples: |
@@ -686,3 +657,11 @@ nlu:
     - my name is (John Evers)[name]
     - my name is (Joseph Parson)[name]
     - my name is (Monica Ser)[name]
+
+- intent: nothing
+  examples: |
+    - Nothing
+    - nothing
+    - You cannot do anything
+    - You cant help me
+    - nothing you can help me with
