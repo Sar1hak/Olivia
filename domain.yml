@@ -1,503 +1,75 @@
 version: "2.0"
 session_config:
-  session_expiration_time: 30  # value in minutes, 0 means infinitely long
-  carry_over_slots_to_new_session: true  # set to false to forget slots between sessions
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 
 intents:
-- greet
-- goodbye
-- affirm
-- deny
-- mood_great
-- mood_unhappy
-- faq
-- personal_data:
-    use_entities: []
-- chitchat:
-    use_entities: []
-- health_data:
-    use_entities: []
-- remedy
-- enquire
-- gender
-- images
-- know
-- Doctor
-- problem
-- out_of_scope
-- response1
-- response2
-- response3
-- thank
-- news_facts
-- responseTreatment
-- responseCause
-- unknow_problem
-- wrong_name
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_news
+  - ask_weather
+  - ask_time
+  - ml
+  - user_suggestions
+  - user_names
+  - chitchat
+  - gpt
+  - author
 
 entities:
-- user_name
-- age
-- history
-- phone_num
-- exercise
-- user_water_intake
-- user_sleep
-- gender
-- disease_name
-- stress
-- blood_type
-- email
-- confirm_data_intake
-- confirm_health_intake
-- confirm_problem_intake
-- confirm_cure_intake
-- confirm_cause_intake
-- relation
-- facts
-- enquire_name
+  - location
+  - name
+  - suggestion
+
 
 slots:
-  user_name:
+  location:
     type: text
     influence_conversation: false
-  age:
-    type: float
-    influence_conversation: false
-    min_value: 0.0
-    max_value:  150.0
-  gender:
+  name:
     type: text
     influence_conversation: false
-  history:
+  suggestion:
     type: text
     influence_conversation: false
-  phone_num:
-    type: text
-    influence_conversation: false
-  blood_type:
-    type: text
-    influence_conversation: false
-  email:
-    type: text
-    influence_conversation: false
-  exercise:
-    type: text
-    influence_conversation: false
-  user_water_intake:
-    type: text
-    influence_conversation: false
-  user_sleep:
-    type: text
-    influence_conversation: false
-  stress:
-    type: text
-    influence_conversation: false
-  language:
-    type: categorical
-    influence_conversation: false
-    values:
-    - english
-  confirm_data_intake:
-    type: text
-    influence_conversation: true
-  confirm_health_intake:
-    type: text
-    influence_conversation: true
-  confirm_problem_intake:
-    type: text
-    influence_conversation: true
-  confirm_cure_intake:
-    type: text
-    influence_conversation: true
-  confirm_cause_intake:
-    type: text
-    influence_conversation: true
-  relation:
-    type: text
-    influence_conversation: false
-  facts:
-    type: text
-    influence_conversation: false
-  enquire_name:
-    type: text
-    influence_conversation: false
+  requested_slot:
+    type: any
+
 
 responses:
-  utter_do_you_know_the_problem:
-  - text: "Are you quite aware about the problem/disease?"
-    buttons:
-    - title: "Yes"
-      payload: '/response1{{"confirm_problem_intake": "True"}}'
-    - title: "No"
-      payload: '/response1{{"confirm_problem_intake": "False"}}'
-  utter_welcome:
-  - text: "How can I Help you?"
-  utter_ask_rephrase:
-  - text: Sorry, I'm not sure I understand. Could you rephrase it?
-  - text: Could you please rephrase your message? I didn't quite get that.
-  utter_did_that_help:
-  - text: Did that help you?
-  - text: Was that helpful?
-  utter_goodbye:
-  - text: Bye-Bye
-  - text: Byeeeeeee
-  - text: Goodbye
-  utter_greet:
-  - text: Hey! How you doing?
-  - text: Hello! How are you today?
-  - text: Hii! How can I help?
-  utter_happy:
-  - text: Great, carry on!
-  - text: That is really good to hear
   utter_iamabot:
   - text: I am a bot, created by Sarthak.
   - text: Truth be told, I am Bot.
-  utter_ask_symptom:
-  - text: What symptom is bothering you the most?
-  - text: Can you describe your symptoms for me?
-  utter_symptoms_unknown:
-  - text: I'll given you some options to help you out :)
-  utter_time:
-  - text: How long have you been experiencing the {disease_name}
-  utter_take_info:
-  - text: Would you like to share some personal information with us before beginning?
-    buttons:
-    - title: "Yes"
-      payload: '/response3{{"confirm_data_intake": "True"}}'
-    - title: "No"
-      payload: '/response3{{"confirm_data_intake": "False"}}'
-  utter_take_health_info:
-  - text: Would you like to share some health related information with us?
-    buttons:
-    - title: "Yes"
-      payload: '/response2{{"confirm_health_intake": "True"}}'
-    - title: "No"
-      payload: '/respons2{{"confirm_health_intake": "False"}}'
-  utter_ask_user_name:
-  - text: "Enter your name:"
-  - text: "What is your name?"
-  utter_ask_age:
-  - text: "How old are you?"
-  - text: "What is your age?"
-  utter_ask_blood_type:
-  - text: "Select your Blood type"
-    custom:
-      payload: dropDown
-      data:
-      - label: "A+"
-        value: "/personal_data{'blood_type':'A+'}"
-      - label: "A-"
-        value: "/personal_data{'blood_type':'A+'}"
-      - label: "B+"
-        value: "/personal_data{'blood_type':'B+'}"
-      - label: "B-"
-        value: "/personal_data{'blood_type':'B-'}"
-      - label: "AB+"
-        value: "/personal_data{'blood_type':'AB+'}"
-      - label: "AB-"
-        value: "/personal_data{'blood_type':'AB-'}"
-      - label: "O+"
-        value: "/personal_data{'blood_type':'O+'}"
-      - label: "O-"
-        value: "/personal_data{'blood_type':'O-'}"
-  utter_ask_gender:
-  - text: Are you male or female? If you don't wish to answer you can leave it bank.
-    buttons:
-    - title: "male"
-      payload: '/personal_data{{"gender": "Male"}}'
-    - title: "female"
-      payload: '/personal_data{{"gender": "Female"}}'
-    - title: "I don't wish to Answer"
-      payload: '/personal_data{{"gender": "Others"}}'
-  utter_ask_phone_num:
-  - text: Please provide your contact number
-  - text: Enter your contact number
-  - text: Enter you phone number
-  utter_ask_email:
-  - text: "Please provide your email id"
-  - text: Please enter your email id
-  - text: Enter your mail id
-  utter_ask_history:
-  - text: "Any medical history I should know about"
-  - text: Any problems or history prior to this 
-  utter_ask_exercise:
-    - text: Do you exercise?
-      buttons:
-      - title: "REGULARLY"
-        payload: '/health_data{{"exercise":"Regularly"}}'
-      - title: "SOMETIMES"
-        payload: '/health_data{{"exercise":"Sometimes"}}'
-      - title: "NO"
-        payload: '/health_data{{"exercise":"No"}}'
-    - text: Do you go for running ?
-      buttons:
-      - title: "YES"
-        payload: '/health_data{{"exercise":"Yes"}}'
-      - title: "NO"
-        payload: '/health_data{{"exercise":"No"}}'
-    - text: How do you go to office ?
-      buttons:
-      - title: "Transportation vehicles"
-        payload: '/health_data{{"exercise":"Transportation"}}'
-      - title: "Walk"
-        payload: '/health_data{{"exercise":"Walk"}}'
-      - title: "Work from Home"
-        payload: '/health_data{{"exercise":"Work from Home"}}'
-    - text: How do you feel about your body ?
-      buttons:
-      - title: "Fit"
-        payload: '/health_data{{"exercise":"Fit"}}'
-      - title: "Average"
-        payload: '/health_data{{"exercise":"Average"}}'
-      - title: "Unfit"
-        payload: '/health_data{{"exercise":"Unfit"}}'
-  utter_ask_user_sleep:
-  - text: "How much sleep did you get last night?"
-  - text: "Average amout of sleep you get:"
-  utter_ask_user_water_intake:
-  - text: "Water intake per Day(in liters)"
-  - text: What is the amout of water you drink on daily basis?
-  utter_ask_stress:
-  - text: "What is your stress level right now ?"
-    buttons:
-    - title: "LOW"
-      payload: '/health_data{{"stress": "low"}}'
-    - title: "MEDIUM"
-      payload: '/health_data{{"stress": "medium"}}'
-    - title: "HIGH"
-      payload: '/health_data{{"stress": "high"}}'
-  - text: "How is your relation with your office team ?"
-    buttons:
-    - title: "Good"
-      payload: '/health_data{{"stress": "low"}}'
-    - title: "Professional"
-      payload: '/health_data{{"stress": "medium"}}'
-    - title: "Lazy"
-      payload: '/health_data{{"stress": "high"}}'
-  - text: "How much hours do you spend in office ?"
-    buttons:
-    - title: "8 hours"
-      payload: '/health_data{{"stress": "low"}}'
-    - title: "9-10 hours"
-      payload: '/health_data{{"stress": "medium"}}'
-    - title: "10+ hours"
-      payload: '/health_data{{"stress": "high"}}'
-  - text: "Do you work on Weekends ?"
-    buttons:
-    - title: "Yes"
-      payload: '/health_data{{"stress": "high"}}'
-    - title: "Sometimes"
-      payload: '/health_data{{"stress": "medium"}}'
-    - title: "No"
-      payload: '/health_data{{"stress": "low"}}'
-  - text: "Do you work outside of working hours ?"
-    buttons:
-    - title: "Yes"
-      payload: '/health_data{{"stress": "high"}}'
-    - title: "Sometimes"
-      payload: '/health_data{{"stress": "medium"}}'
-    - title: "No"
-      payload: '/health_data{{"stress": "low"}}'
-  utter_personal_data_summary:
-  - text: "You've submitted the following answers:\n
-            - Name: {user_name}\n
-            - Age: {age}\n
-            - Contact No.: {phone_num}\n
-            - Exercised?: {exercise}\n
-            - Sleep: {user_sleep}\n
-            - Water in take: {user_water_intake}\n
-            - Stress level: {stress}"
-  utter_ask_problems:
-  - text: "Can you explain your problem"
-  utter_ask_continue:
-  - text: "Wanna continue with the data entry for evaluation"
-  - text: "Do you want to continue with the form"
-  utter_info_thanks:
-  - text: "Thank you so much for the information"
-  utter_anything_else:
-  - text: "Do you want anything else"
-  - text: "Is there anything else i can help you with??"
-  utter_no_worries:
-  - text: "No problemo!"
-  - text: "No worries"
-  - text: "No problem"
-  - text: "Hakunama Taata"
+  utter_greet:
+  - text: "Hey! How are you?"
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Here is something to cheer you up:"
+    image: "/images/Olivia.jpeg"
+  utter_did_that_help:
+  - text: "Did that help you?"
+  utter_happy:
+  - text: "Great, carry on!"
+  utter_goodbye:
+  - text: "Bye"
   utter_out_of_scope:
   - text: "This text is really out of context"
   utter_nohelp:
-  - text: For now that's all I can do, so feel free to try it out. If you have any
-      suggestions for what I should learn, let me know!
-  utter_ask_relation:
-  - text: "How is your personal life going ?"
-    buttons:
-    - title: "Good"
-      payload: '/health_data{{"relation": "Good"}}'
-    - title: "Okay"
-      payload: '/health_data{{"relation": "Okay"}}'
-    - title: "Bad"
-      payload: '/health_data{{"relation": "Bad"}}'
-  - text: "How much time do you spend with your family each day ?"
-    buttons:
-    - title: "Less than 1 hour"
-      payload: '/health_data{{"relation": "Good"}}'
-    - title: "Between 1 to 4 hours"
-      payload: '/health_data{{"relation": "Between 1 to 4 hours"}}'
-    - title: "More than 4 hours"
-      payload: '/health_data{{"relation": "More than 4 hours"}}'
-  - text: "How often do you talk to your family members ?"
-    buttons:
-    - title: "Frequently"
-      payload: '/health_data{{"relation": "Frequently"}}'
-    - title: "Less"
-      payload: '/health_data{{"relation": "Less"}}'
-    - title: "Once in a month"
-      payload: '/health_data{{"relation": "Once in a month"}}'
-  - text: "Do you have dinner with your family members ?"
-    buttons:
-    - title: "Yes"
-      payload: '/health_data{{"relation": "Yes"}}'
-    - title: "No"
-      payload: '/health_data{{"relation": "No"}}'
-  utter_ask_news:
-  - text: "Would you like to hear some interesting news/facts ?"
-    buttons:
-    - title: "Yes"
-      payload: '/health_data{{"facts": "Yes"}}'
-    - title: "No"
-      payload: '/health_data{{"facts": "No"}}'
-  utter_ask_for_further_info:
-    - text: "Would you like to know further about?"
-      buttons:
-      - title: "Yes"
-        payload: "yes"
-      - title: "No"
-        payload: "no"
-  utter_ask_for_display_info:
-    - text: "Select what you would like to view:"
-      custom:
-        payload: dropDown
-        data:
-        - label: "Symptoms"
-          value: "/enquire{'enquire_name':'symptoms'}"
-        - label: "Causes"
-          value: "/enquire{'enquire_name':'causes'}"
-        - label: "Risk Factors"
-          value: "/enquire{'enquire_name':'risk_factor'}"
-        - label: "Treatment"
-          value: "/enquire{'enquire_name':'treatment'}"
-        - label: "Medication"
-          value: "/enquire{'enquire_name':'medication'}"
-        - label: "Home Remedies"
-          value: "/enquire{'enquire_name':'home_remedies'}"
-        - label: "Link" 
-          value: "/enquire{'enquire_name':'link'}"
-        - label: "All"
-          value: "/enquire{'enquire_name':'all'}"
-  utter_ask_further_cure_info:
-    - text: "What should i Tell you about ?"
-      buttons:
-      - title: "Treatments"
-        payload: '/responseTreatment{{"confirm_cure_intake": "treatments"}}'
-      - title: "Medications"
-        payload: '/responseTreatment{{"confirm_cure_intake": "medications"}}'
-      - title: "Home Remedies"
-        payload: '/responseTreatment{{"confirm_cure_intake": "home_remedies"}}'
-      - title: "Nothing"
-        payload: '/responseTreatment{{"confirm_cure_intake": "Nothing"}}'
-  utter_ask_further_symptoms_info:
-    - text: "What should i Tell you about ?"
-      buttons:
-      - title: "Symptoms"
-        payload: '/responseCause{{"confirm_cause_intake": "Symptoms"}}'
-      - title: "Causes"
-        payload: '/responseCause{{"confirm_cause_intake": "Causes"}}'
-      - title: "Nothing"
-        payload: '/responseCause{{"confirm_cause_intake": "Nothing"}}'
-  utter_default_fallback:
-    - text: Sorry I am unable to process your response
-    - text: I apologize for the inconvenience. I am unable to process your response.
-    - text: Sorry, I think there has been some problem and I was unable to process your
-        request.
-    - text: I apologize for the inconvenience. I could not process your request.
+  - text: "For now that's all I can do, so feel free to try it out. If you have any suggestions for what I should learn, let me know!"
+  utter_name:
+  - text: "Enter you name"
+  utter_suggestion:
+  - text: "Do you have any suggestions for me or Sarthak?"
+
 
 actions:
-- action_submit_personal_data_form
-- validate_personal_data_form
-- action_submit_health_data_form
-- validate_health_data_form
-- action_enquire
-- action_disease_evaluation
-- action_get_news
-- action_symptoms_causes
-- action_treatment_medication_remedies
-- action_reset_values
-- action_rename
-
-
-forms:
-  personal_data_form:
-    user_name:
-      - type: from_entity
-        entity: user_name
-      - type: from_text
-        intent: personal_data
-    age:
-      - type: from_entity
-        entity: age
-      - type: from_text
-        intent: personal_data
-    gender:
-      - type: from_entity
-        entity: gender
-      - type: from_text
-        intent: personal_data
-    phone_num:
-      - type: from_entity
-        entity: phone_num
-      - type: from_text
-        intent: personal_data
-    blood_type:
-      - type: from_entity
-        entity: blood_type
-      - type: from_text
-        intent: personal_data
-    email:
-      - type: from_entity
-        entity: email
-      - type: from_text
-        intent: personal_data
-  suggestion_form:
-    suggestion:
-      - type: from_text
-  health_form:
-    exercise:
-      - type: from_entity
-        entity: exercise
-      - type: from_text
-        intent: health_data
-    user_water_intake:
-      - type: from_entity
-        entity: user_water_intake
-      - type: from_text
-        intent: health_data
-    stress:
-      - type: from_entity
-        entity: stress
-      - type: from_text
-        intent: health_data
-    user_sleep:
-      - type: from_entity
-        entity: user_sleep
-      - type: from_text
-        intent: health_data
-    relation:
-      - type: from_entity
-        entity: relation
-      - type: from_text
-        intent: health_data
-    history:
-      - type: from_entity
-        entity: history
-      - type: from_text
-        intent: health_data
+  - action_get_news
+  - action_get_weather
+  - action_get_time
+  - action_get_name

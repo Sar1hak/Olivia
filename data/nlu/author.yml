@@ -1,0 +1,54 @@
+version: "2.0"
+nlu:
+- intent: author/ask_whoisauthor
+  examples: |
+    - Who is the author of Olivia
+    - Tell me about your author
+    - Tell me about sarthak chauhan
+    - About your developer
+    - Who is the author
+    - Tell about Sarthak
+    - who is Sarthak Chauhan
+    - Who is sarthak ?
+    - what do you know about sarthak
+    - Do you know Sarthak???
+    - Sarhak Chauhan
+- intent: author/ask_authorlive
+  examples: |
+    - Where is Sarthak from?
+    - where is Sarthak Chauhan from
+    - where does Sarthak live
+    - where is you developer
+    - where is the author
+
+- intent: author/ask_authoreval1
+  examples: |
+    - What are some of Sarthak's strengths?
+    - Sarthak's strenghts
+    - strengths of sarthak
+
+
+
+- intent: author/ask_authoreval2
+  examples: |
+    - What are some of Sarthak's weekness?
+    - Sarthak's weeknesses
+    - Weekness of sarthak
+
+- intent: author/ask_interest
+  examples: |
+    - Area of Interest
+    - What is Sarthak interested in
+    - Which fields does he like
+    - sarthak's interest
+
+
+- intent: author/ask_projects
+  examples: |
+    - What are the projects done by Sarthak
+    - Any project done by him??
+    - Has sarthak done any project except you
+    - Has sarthak done any project
+    - Tell me about any of the projects done by him
+    -  Tell me about one of the projects done by sarthak
+

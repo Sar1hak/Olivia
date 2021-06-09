@@ -1,0 +1,43 @@
+<html>
+    <body>
+        <style>
+            .rw-conversation-container .rw-header{background-color: #EF5700;}
+            .rw-conversation-container .rw-messages-container .rw-message .rw-response{background-color: #EF5700;}
+        </style>
+        <script>!(function () {
+            let e = document.createElement("script"),
+              t = document.head || document.getElementsByTagName("head")[0];
+            (e.src =
+              "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+              // Replace 1.x.x with the version that you want
+              (e.async = !0),
+              (e.onload = () => {
+                window.WebChat.default(
+                  {
+                    initPayload: '/greet',
+                    customData: { language: "en" },
+                    socketUrl: "http://localhost:5005",
+                    title: 'OLIVIA',
+                    subtitle: 'Say hi and start',
+                    inputTextFieldHint: "Type a message...",
+                    connectingText: "Waiting for server...",
+                    fullScreenMode: false,
+                    params:{
+                      images: {
+                        dims: {
+                          width: 300,
+                          height: 200,
+                        }
+                      },
+                      Storage: "session"
+                    }
+                    // add other props here
+                  },
+                  null
+                );
+              }),
+              t.insertBefore(e, t.firstChild);
+          })();
+          </script>
+    </body>
+</html>

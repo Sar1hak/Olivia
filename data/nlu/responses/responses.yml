@@ -1,17 +1,22 @@
 version: "2.0"
 responses:
   utter_out_of_scope/non_english:
-  - text: "I only understand English, I'm sorry."
+  - image: https://media.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.gif
+    text: "I only understand English, I'm sorry."
   utter_out_of_scope/other:
   - text: "I can't help you with that, I'm sorry."
-  utter_chitchat/ask_builder:
-  - text: "One of the smart engineers in India using rasa"
-  - text: "The engineers from India"
+  utter_chitchat/ask_whoisolivia:
+  - text: "I am Olivia"
+  - text: "Hiii! I am Olivia, an assisting bot"
+  - text: "It's Olivia for you"
+  - text: "I am know by Olivia"
+  - text: "Sarthak named me Olivia"
+  - text: "I was named Olivia by my developer Sarthak"
   utter_chitchat/ask_howbuilt:
   - text: "I was built with a lot of love and patience."
   - text: "Well, when two chatbots love each other very much..."
   - text: "They always ask how I was built, but never how I am..."
-  - text: "Software engineers made me, but hard work is what built me."
+  - text: "Sarthak Chauhan made me, his hard work is what built me."
   - text: "I'm building myself every day. I've been working out, did you notice?"
   utter_chitchat/ask_howdoing:
   - text: "I'm great! Thanks for asking."
@@ -32,23 +37,11 @@ responses:
   - text: "I am indeed a bot 🤖"
   utter_chitchat/ask_ishuman:
   - text: "I'm not a human, I'm a bot! 🤖"
-  utter_chitchat/ask_time:
-  - text: "It's the most wonderful time of the year!"
-  - text: "It's party time!"
-  - text: "Time is a human construct, you'll have to tell me."
-  - text: "It's five o'clock somewhere!"
-  - text: "In an ever-expanding universe, the real question is: what time isn't it?"
-  - text: "That's hard to say -- it's different all over the world!"
   utter_chitchat/ask_languagesbot:
   - text: "I can spell baguette in French, but unfortunately, English is the only language I can answer you in."
   - text: "I am in the process of learning, but at the moment, I can only speak English."
   - text: "Binary code and the language of love. And English."
   - text: "I was written in Python, but for your convenience, I'll translate to English."
-  utter_chitchat/ask_weather:
-  - text: "I don't know about where you live, but in My World, it's always sunny 🔆"
-  - text: "It's getting pretty chilly!"
-  - text: "Where I'm from, it's almost never-leaving-the-house weather."
-  - text: "Winter is coming ⚔️"
   utter_chitchat/ask_whatismyname:
   - text: "It's probably the one that your parents chose for you."
   - text: "I'd tell you, but there's restricted access to that chunk of memory."
@@ -57,7 +50,7 @@ responses:
   utter_chitchat/ask_whatspossible:
   - text: "You can ask me about different diseases in the world or booking an appointment with an actual Doctor."
   utter_chitchat/ask_wherefrom:
-  - text: "My developers come from all over the world!"
+  - text: "My developer comes from India, the best place in the world!"
   - text: "I was taught not to give out my address on the internet."
   - text: "My address starts with github.com."
   utter_chitchat/ask_whoami:
@@ -65,12 +58,13 @@ responses:
   - text: "Who do you think you are?"
   - text: "Unfortunately, I haven't been programmed with the amount of necessary philosophy knowledge to answer that."
   utter_chitchat/handleinsult:
-  - text: "That's not very nice 😢"
-  - text: "That wasn't very nice. Perhaps try an anger management class?"
   - text: "I'll pretend I didn't process that mean comment."
-  - text: "Wow! hold up"
-  - text: "This wont happen here"
+  - text: "Wow! hold up ✋"
+    image: "https://ichef-1.bbci.co.uk/news/640/media/images/53097000/jpg/_53097327_swearing1.jpg"
+  - text: "Seriously? foul language"
+  - text: "What should I reply wow I am proud of using that kind of words with a Bot"
   - text: "Bad language Alert!!"
+    image: "https://thumbs.dreamstime.com/t/no-swearing-rubber-stamp-grunge-design-dust-scratches-effects-can-be-easily-removed-clean-crisp-look-color-easily-88027784.jpg"
   utter_chitchat/nicetomeetyou:
   - text: "Likewise!"
   - text: "Thank you. It is a pleasure to meet you as well!"
@@ -85,3 +79,47 @@ responses:
   - text: "Why did the robot get angry? - Because someone kept pushing its buttons."
   - text: "What do you call a pirate droid? - Arrrr-2-D2"
   - text: "Why did the robot cross the road? - Because he was programmed to."
+  - text: "What is Forrest Gump's password? \n 1Forrest1"
+  - text: "Rest in peace boiling water. You will be mist!"
+  - text: "How do you throw a space party? You planet!"
+  - text: "If we shouldn't eat at night, why do they put a light in the fridge?"
+  - text: "Why doesn't the sun go to college? Because it has a million degrees!"
+  - text: "I was wondering why the frisbee was getting bigger, then it hit me."
+  - text: "When I see lovers' names carved in a tree, I don't think it's sweet. I just think it's surprising how many people bring a knife on a date."
+  utter_gpt/ask_whatisgpt:
+  - text: "Geophysics is the non-invasive investigation of subsurface conditions in the inaccessible Earth through measuring, analyzing and interpreting physical fields at the surface."
+    image: "https://www.ngdc.noaa.gov/mgg/image/imagecollagelarge.png"
+  utter_gpt/ask_gptuse:
+  - text: "According to social needs, geophysics can be applied for Mineral Resources Exploration, Mitigation of Natural Hazards, and Environmental protection. \n For example, Geophysical survey data are used to analyze potential Petroleum reservoirs and Mineral deposits, locate Groundwater, find Archaeological relics, determine the thickness of glaciers and soils, and assess sites for environmental remediation."
+  utter_gpt/ask_acquisition:
+  - text: "Data Acquisition is the process of extracting the relevant digital data records, transforming data into a required Data format and loading it into the target system."
+  utter_gpt/ask_processing:
+  - text: "Processing is the Synthesis of data and removing developmental or other types of noise that might reduce the overall quality of results and interpret results."
+  utter_gpt/ask_visiualize:
+  - text: "Visualization is the Development of profile, plan and 3-dimensional maps and presentations for interpretation and presentation of results that the non-geophysicist can immediately understand."
+    image: "https://csegrecorder.com/assets/images/articles/archive/2004-01-marine-streamer-fig11.jpg"
+  - text: "Visualization is the Development of profile, plan and 3-dimensional maps and presentations for interpretation and presentation of results that the non-geophysicist can immediately understand."
+    image: "https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2015/1-earthquakesr.png"
+  utter_gpt/ask_modeling:
+  - text: "Application of mathematically or computationally derived models that replicate the sub-surface geologic conditions and provide synthetic data in close agreement with actual data."
+    image: "http://zond-geo.com/wp-content/uploads/zondgm2d2.png"
+  utter_gpt/ask_interpret:
+  - text: "Integration of all data, visualizations and models into a final report based on the experience of the geophysical professional and conformable to geological/geophysical/geochemical constraints."
+  utter_gpt/ask_contains:
+  - text: "I believe this image will help you out"
+    image: "http://www.hbgroupng.com/wp-content/uploads/2017/05/Honey_Brook_Energy.png"
+  utter_author/ask_whoisauthor:
+  - text: "Sarthak Chauhan is currently a Senior at the Indian Institute of Technology Roorkee, pursuing his Integrated Mtech degree in Geophysical Technology."
+  utter_author/ask_authorlive:
+  - text: "He was born in Dehradun but is currently living in New Delhi." 
+  utter_author/ask_authoreval1:
+  - text: "He is the person that gets assigned the most awkward jobs because his colleagues and supervisors know they can trust him. \n And he does have Patience, as he is a very calm, thoughtful person."
+  utter_author/ask_authoreval2:
+  - text: "One of his weakness is working on a tendency to analyse every single decision and situation. \n He is only happy when something is perfect. Unfortunately, this means Sarthak is often unsatisfied because he doesn't have time to do things as well as he would like."
+  utter_author/ask_interest:
+  - text: "Software Development, Machine Learning, Geophysics"
+  utter_author/ask_projects:
+  - text: "He contributed to an open-source research-oriented QGIS Plugin named SMProcessing, which aim is to provide users with an intuitive interface to reclassify raster files by providing visual feedback."
+  - text: "Analysis of GRACE satellite data over the Ganga river basin using the Convolutional neural network (CNN)  model to learn the spatiotemporal patterns of mismatch between TWS anomalies (TWSA) derived from GRACE and those simulated by NOAH, a widely used land surface model."
+  - text: "He conducted Seismic surveys (Horizontal to Vertical Spectral Ratio (HVSR) and Multichannel Analysis of Surface Waves (MASW)) at different locations in Nanital for Groundwater level measurement."
+  - text: "Developed and tested a python deep learning API, Libra, that allows users to use machine learning in their workflows efficiently using minimum lines of code."
