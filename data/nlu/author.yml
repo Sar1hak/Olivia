@@ -13,6 +13,9 @@ nlu:
     - what do you know about sarthak
     - Do you know Sarthak???
     - Sarhak Chauhan
+    - Before that can you tell me about Sarthak
+    - sarthak chauhan
+    - Before that can you tell me about sarthak chauhan
 - intent: author/ask_authorlive
   examples: |
     - Where is Sarthak from?

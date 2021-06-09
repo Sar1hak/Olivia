@@ -8,7 +8,7 @@ stories:
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
-  - action: utter_suggestion
+  - action: utter_ask_needhelp
 
 - story: sad path 1
   steps:
@@ -45,6 +45,11 @@ stories:
   - intent: ask_time
   - action: action_get_time
 
+- story: no help- get suggestion
+  steps:
+  - intent: nothing
+  - action: utter_suggestion
+
 - story: suggestion- yes
   steps:
   - action: utter_suggestion
@@ -60,3 +65,4 @@ stories:
   - action: utter_suggestion
   - intent: deny
   - action: utter_happy
+
