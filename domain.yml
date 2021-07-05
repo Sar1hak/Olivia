@@ -11,9 +11,9 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - ask_news
-  - ask_weather
-  - ask_time
+  - talk_news
+  - talk_weather
+  - talk_time
   - ml
   - user_suggestions
   - user_names

@@ -436,7 +436,7 @@ nlu:
     - am I talking to a human?
 
 
-- intent: ask_news
+- intent: talk_news
   examples: |
     - tell some news
     - what is going on in the world?
@@ -457,7 +457,7 @@ nlu:
     - what is gpt
 
 
-- intent: ask_weather
+- intent: talk_weather
   examples: |
     - Are there any meteorological changes that I need to be aware of?
     - Are we in for a scorcher?
@@ -538,7 +538,7 @@ nlu:
     - wheather at you location?
     - wheather be like at your place?
 
-- intent: ask_time
+- intent: talk_time
   examples: |
     - Can you give me the time?
     - Can you tell me the time?
