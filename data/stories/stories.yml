@@ -32,17 +32,17 @@ stories:
 
 - story: tell news
   steps:
-  - intent: ask_news
+  - intent: talk_news
   - action: action_get_news
 
 - story: tell weather
   steps:
-  - intent: ask_weather
+  - intent: talk_weather
   - action: action_get_weather
 
 - story: tell time
   steps:
-  - intent: ask_time
+  - intent: talk_time
   - action: action_get_time
 
 - story: no help- get suggestion
