@@ -48,7 +48,7 @@ responses:
   - text: "Believe it or not, I actually am not spying on your personal information."
   - text: "You're the second person now to ask me that. Rihanna was the first."
   utter_chitchat/ask_whatspossible:
-  - text: "You can ask me about different diseases in the world or booking an appointment with an actual Doctor."
+  - text: "You can ask me about different related to this website and the author."
   utter_chitchat/ask_wherefrom:
   - text: "My developer comes from India, the best place in the world!"
   - text: "I was taught not to give out my address on the internet."
@@ -72,6 +72,8 @@ responses:
   - text: "Pleased to meet you too!"
   - text: "It's always a pleasure to meet new people!"
   - text: "Nice to meet you too! Happy to be of help."
+  utter_chitchat/impress:
+  - text: "I know 😉"
   utter_chitchat/telljoke:
   - text: "Why are eggs not very much into jokes? - Because they could crack up."
   - text: "What's a tree's favorite drink? - Root beer!"
@@ -87,7 +89,7 @@ responses:
   - text: "I was wondering why the frisbee was getting bigger, then it hit me."
   - text: "When I see lovers' names carved in a tree, I don't think it's sweet. I just think it's surprising how many people bring a knife on a date."
   utter_gpt/ask_whatisgpt:
-  - text: "Geophysics is the non-invasive investigation of subsurface conditions in the inaccessible Earth through measuring, analyzing and interpreting physical fields at the surface."
+  - text: "Geophysics is the non-invasive investigation of subsurface conditions in the inaccessible Earth🌎 through measuring, analyzing and interpreting physical fields at the surface."
     image: "https://www.ngdc.noaa.gov/mgg/image/imagecollagelarge.png"
   utter_gpt/ask_gptuse:
   - text: "According to social needs, geophysics can be applied for Mineral Resources Exploration, Mitigation of Natural Hazards, and Environmental protection. \n For example, Geophysical survey data are used to analyze potential Petroleum reservoirs and Mineral deposits, locate Groundwater, find Archaeological relics, determine the thickness of glaciers and soils, and assess sites for environmental remediation."

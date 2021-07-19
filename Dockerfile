@@ -1,6 +1,15 @@
-FROM ubuntu:18.04
+FROM rasa/rasa:2.6.1-full
+
+USER root
+
+RUN apt-get update -qq
+
+WORKDIR /app
+
+ADD . .
+
 ENTRYPOINT []
-RUN apt-get update && apt-get install -y python3 python2-pip && python3 -m pip pip install --no-cache --u$he --upgrade pip && pip3 install --no-cache rasa==2.6.1
-ADD . /app/
-RUN chmod +x /app/start_services.sh
-CMD /app/start_services.sh
+
+USER 1001
+
+CMD $(echo “rasa run -p $PORT -m models --credentials credentials.yml --enable-api --log-file out.log --endpoints endpoints.yml” | sed ‘s/=//’)

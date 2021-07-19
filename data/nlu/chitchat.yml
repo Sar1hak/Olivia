@@ -617,3 +617,15 @@ nlu:
     - nice to meet you
     - pleasure to meet you
     - nice to meet you Chi
+- intent: chitchat/impress
+  examples: |
+    - Wow
+    - wow!
+    - Woahhhhhh
+    - That is really nice
+    - It is awesome man
+    - Awesome
+    - Beautiful
+    - Nice
+    - Noice
+    - noice
