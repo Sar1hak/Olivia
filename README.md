@@ -2,6 +2,8 @@
 
 ## Rasa
 Build Modern Chatbot using Rasa
+Rasa is an open source machine learning framework for building AI assistants and chatbots. 
+Mostly you don’t need any programming language experience to work in Rasa.
 
 ## Installation
 
