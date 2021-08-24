@@ -1,13 +1,19 @@
 # 🐶Olivia - The Portfolio Assistant Bot
+Olivia helps you go through the projects/achievements displayed in the author's Website:
+
+https://sarthakchauhan-portfolio.herokuapp.com/
+
+Basic Chitchat aspects also added to it.
 
 ## Rasa
 Build Modern Chatbot using Rasa
+
 Rasa is an open source machine learning framework for building AI assistants and chatbots. 
 Mostly you don’t need any programming language experience to work in Rasa.
 
 ## Installation
 
-To install Olivia, please clone the repo and run:
+To install Olivia, please clone the git repo on to your local system and run:
 
 ```sh
 cd Olivia
